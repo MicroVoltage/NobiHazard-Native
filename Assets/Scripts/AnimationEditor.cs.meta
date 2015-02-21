@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 7114c9955a410461faa122b10dc8c995
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - spriteSheet: {fileID: 2800000, guid: f954d3f36a61d8147823889af2ee1de8, type: 3}
+  - guiSkin: {fileID: 11400000, guid: 9fc6d50c2b89bf34fa59a4c15218d045, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
