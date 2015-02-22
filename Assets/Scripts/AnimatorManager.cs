@@ -23,12 +23,6 @@ public class AnimatorManager : MonoBehaviour {
 
 	public string[] weaponNames;
 
-	public bool testAnimation;
-	public int orientation;
-	public int weapon;
-	public int state;
-	public int stateParam;
-
 	private Animator animator;
 
 
@@ -36,14 +30,6 @@ public class AnimatorManager : MonoBehaviour {
 		animator = GetComponent<Animator>();
 	}
 
-	void Update () {
-		if (!testAnimation) {
-			return;
-		}
-
-		PlayAnimation(orientation, weapon, state, stateParam);
-
-	}
 
 	/** PlayAnimation
 	 * int orientation : 0 - 3 : back right front left

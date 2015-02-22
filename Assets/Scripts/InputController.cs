@@ -6,53 +6,83 @@ public class InputController : MonoBehaviour {
 	public int orientationIndex;
 	public Vector2 direction;
 
+	public float H;
+	public float V;
+
 	public bool A;
 	public bool B;
 	public bool S;
+	public bool Adown;
+	public bool Bdown;
+	public bool Sdown;
 
-	public int mode = 0;	// normal message menu
+	// Exam button
+	public bool exam;
+	// Fire button
+	public bool fire;
+	// Menu button
+	public bool menu;
+	// Cancel button
+	public bool cancel;
+	// Switch button
+	public bool shift;
+
+	private GameController gameController;
 
 	void Awake () {
-		GameController.inputController = this;
+		if (GameController.inputController == null) {
+			GameController.inputController = this;
+		} else if (GameController.inputController != this) {
+			Destroy(gameObject);
+		}
 	}
 
 	void Start () {
+		gameController = GameController.gameController;
+
 		orientation = Vector3.zero;
-		direction = Vector3.zero;
-		A = false;
-		B = false;
-		S = false;
+		orientationIndex = 0;
 	}
 
 	void Update () {
-		switch (mode) {
+		direction = new Vector2(H, V);
+		exam = false;
+		fire = false;
+		menu = false;
+		cancel = false;
+		shift = false;
+		RefreshInputStates();
+
+		switch (gameController.gameState) {
 		case 0:
 			SetOrientation();
-			SetOrientationIndex();
 
-			A = Input.GetButtonDown("A");
-			B = Input.GetButtonDown("B");
-			S = Input.GetButton("S");
+			exam = Adown;
+			menu = Bdown;
+			shift = Sdown;
 			break;
 		case 1:
-			direction = Vector3.zero;
+			if (!B) {
+				SetOrientation();
+			}
 
-			A = false;
-			B = Input.GetButtonDown("A");
-			B = B || Input.GetButtonDown("B");
+			fire = A;
+			shift = Adown;
 			break;
+		case 2:
 
+
+			break;
+		case 3:
+			cancel = Adown || Bdown;
+			break;
 		default:
-			Debug.LogError(mode.ToString() + " - mode not exist");
+			Debug.LogError(gameController.gameState + " - input state not exist");
 			break;
 		}
 	}
 
 	void SetOrientation () {
-		direction = new Vector2(
-			Input.GetAxis("H"),
-			Input.GetAxis("V"));
-
 		Vector2 newOrientation = Vector3.zero;
 		if (direction.sqrMagnitude > 1.0f) {
 			newOrientation = direction - orientation;
@@ -63,6 +93,8 @@ public class InputController : MonoBehaviour {
 		if (newOrientation != orientation && direction.sqrMagnitude == 1.0f) {
 			orientation = newOrientation;
 		}
+
+		SetOrientationIndex();
 	}
 
 	void SetOrientationIndex () {
@@ -75,5 +107,17 @@ public class InputController : MonoBehaviour {
 		} else if (orientation.x < 0) {
 			orientationIndex = 3;
 		}
+	}
+
+	void RefreshInputStates () {
+		H = Input.GetAxis("H");
+		V = Input.GetAxis("V");
+
+		A = Input.GetButton("A");
+		B = Input.GetButton("B");
+		S = Input.GetButton("S");
+		Adown = Input.GetButtonDown("A");
+		Bdown = Input.GetButtonDown("B");
+		Sdown = Input.GetButtonDown("S");
 	}
 }

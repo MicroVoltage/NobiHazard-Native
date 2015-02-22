@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour {
 
 		canFire = Time.time - lastFireTime >= weaponFireInterval[weaponIndex];
 
-		switch (inputController.mode) {
+		switch (GameController.gameController.gameState) {
 		case 0:
 			isWalking = inputController.direction.sqrMagnitude > 0;
 			if (canFire && inputController.A) {

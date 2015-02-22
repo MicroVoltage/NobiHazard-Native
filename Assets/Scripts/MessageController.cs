@@ -8,7 +8,10 @@ public class MessageController : MonoBehaviour {
 	public Image image;
 	public Text message;
 
-	public bool showingMessage = false;
+	public bool showingMessage;
+
+	private GameController gameController;
+	private int originalGameState;
 	
 
 	void Awake () {
@@ -17,15 +20,18 @@ public class MessageController : MonoBehaviour {
 		} else if (GameController.messageController != this) {
 			Destroy(gameObject);
 		}
-
 	}
 
 	void Start () {
+		gameController = GameController.gameController;
+
 		HideMessage();
 	}
 
 	public void ShowMessage (string imageName, string newMessage) {
-		image.sprite = images[FindImage(imageName)];
+		gameController.gameState = 2;
+
+		image.sprite = images[GetImageIndex(imageName)];
 		message.text = newMessage;
 
 		gameObject.SetActive(true);
@@ -33,11 +39,13 @@ public class MessageController : MonoBehaviour {
 	}
 
 	public void HideMessage () {
+		gameController.gameState = 0;
+
 		gameObject.SetActive(false);
 		showingMessage = false;
 	}
 
-	int FindImage(string imageName) {
+	int GetImageIndex(string imageName) {
 		for (int i=0; i<images.Length; i++) {
 			if (images[i].name == imageName) {
 				return i;

@@ -12,7 +12,6 @@ public class MessageEvent : MonoBehaviour {
 		Debug.Log(gameObject.name + " - get message event");
 
 		showingMessage = true;
-		GameController.inputController.mode = 1;
 		GameController.messageController.ShowMessage(faceName, messages[0]);
 	}
 
@@ -26,7 +25,6 @@ public class MessageEvent : MonoBehaviour {
 			messageIndex++;
 		} else {
 			GameController.messageController.HideMessage();
-			GameController.inputController.mode = 0;
 			showingMessage = false;
 			messageIndex = 1;
 		}

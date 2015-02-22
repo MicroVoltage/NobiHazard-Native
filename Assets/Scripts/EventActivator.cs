@@ -7,7 +7,7 @@ public class EventActivator : MonoBehaviour {
 	private BoxCollider2D eventDetector;
 	
 	void Start () {
-		inputController = GameController.gameController.GetComponent<InputController>();
+		inputController = GameController.inputController;
 		eventDetector = GetComponent<BoxCollider2D>();
 		
 		eventDetector.size = new Vector2(GameController.gameScale, GameController.gameScale);
@@ -29,7 +29,8 @@ public class EventActivator : MonoBehaviour {
 		if (!collider.CompareTag("Event")) {
 			return;
 		}
-		if (inputController.A) {
+
+		if (inputController.exam) {
 			Debug.Log("OnExam - even fired to " + collider.gameObject.name);
 			collider.gameObject.SendMessage("OnExam", SendMessageOptions.DontRequireReceiver);
 		}
