@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour {
 	public static MessageController messageController = null;
 	public static Inventory inventory = null;
 
-	public static float gameScale = 2.0f;
+	public const float gameScale = 2.0f;
 
 	public Transform cameraFocus;
 
@@ -18,6 +18,10 @@ public class GameController : MonoBehaviour {
 	 * 3: message event state
 	 **/
 	public int gameState = 0;
+	public const int stateSearch = 0;
+	public const int stateFight = 1;
+	public const int stateMenu = 2;
+	public const int stateMessage = 3;
 
 
 	void Awake () {

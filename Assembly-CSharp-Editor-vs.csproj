@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Editor\AnimationEditorUI.cs" />
+     <Compile Include="Assets\Scripts\Editor\InventoryUI.cs" />
      <Compile Include="Assets\Scripts\Editor\TileEditorUI.cs" />
+     <Compile Include="Assets\Scripts\Editor\WeaponControllerUI.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>

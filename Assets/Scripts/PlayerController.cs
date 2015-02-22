@@ -1,87 +1,132 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(AnimatorManager))]
+[RequireComponent(typeof(AnimatorManager), typeof(WeaponController))]
 public class PlayerController : MonoBehaviour {
-
 	public float walkForce = 300.0f;
-	public float maxHealth = 100.0f;
-	public string[] weaponNames;
-	public float[] weaponFireInterval;
-	public float decapDamage = 200.0f;
 
-	public bool isWalking;
-	public bool isArmed;
-	public bool canFire = true;
+	public int weaponIndex = 0;
+	public bool weaponDrawn = false;
 
-	public bool isDecaped = false;
+	public bool isMoving = false;
+	public bool isFiring = false;
 	public bool isDead = false;
 
-	public float health = 100.0f;
-	public int weaponIndex;
-	
-	private float lastFireTime;
-
+	private GameController gameController;
 	private InputController inputController;
 	private AnimatorManager animatorManager;
+	private Inventory inventory;
+	private WeaponController weaponController;
+
+	private int gameState;
 
 
 	void Start () {
+		gameController = GameController.gameController;
 		inputController = GameController.inputController;
 		animatorManager = GetComponent<AnimatorManager>();
+		inventory = GameController.inventory;
+		weaponController = GetComponent<WeaponController>();
 	}
 
 	void Update () {
+		if (isDead) {
+			return;
+		}
+
+		gameState = gameController.gameState;
+
 		RefreshPlayerState();
 
 		RefreshPlayerAnimation();
-
-
-
-		if (isDead) {
-			if (isDecaped) {
-				animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, 3, 3);
-			} else {
-				animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, 3, 0);
-			}
-			return;
-		} else if (isDecaped) {
-			animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, 3, 1);
-			health -= decapDamage * Time.deltaTime;
-			if (health <= 0) {
-				isDead = true;
-			}
-			return;
-		}
-
-		canFire = Time.time - lastFireTime >= weaponFireInterval[weaponIndex];
-
-		switch (GameController.gameController.gameState) {
-		case 0:
-			isWalking = inputController.direction.sqrMagnitude > 0;
-			if (canFire && inputController.A) {
-				animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, 2, 0);
-				canFire = false;
-				lastFireTime = Time.time;
-			} else if (isWalking) {
-					rigidbody2D.AddForce(inputController.direction * walkForce);
-					animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, 1, 0);
-			} else {
-					animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, 0, 0);
-			}
-			break;
-		case 1:
-			isWalking = false;
-			animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, 0, 0);
-			break;
-		}
 	}
 
 	void RefreshPlayerState () {
+		if (inputController.shift) {
+			weaponDrawn = !weaponDrawn;
+		}
 
+		isMoving = false;
+		isFiring = false;
+		switch (gameState) {
+		case GameController.stateSearch:
+			if (weaponDrawn) {
+				gameController.gameState = GameController.stateFight;
+				break;
+			}
+
+			isMoving = inputController.direction.sqrMagnitude > 0;
+			rigidbody2D.AddForce(inputController.direction.normalized * walkForce);
+			break;
+		case GameController.stateFight:
+			if (!weaponDrawn) {
+				gameController.gameState = GameController.stateSearch;
+				break;
+			}
+
+			isMoving = inputController.direction.sqrMagnitude > 0;
+			rigidbody2D.AddForce(inputController.direction.normalized * walkForce);
+
+			if (inputController.fire) {
+				if (weaponController.Fire(weaponIndex) == 0) {
+					isFiring = true;
+				}
+			}
+			break;
+		case GameController.stateMenu:
+
+			break;
+		case GameController.stateMessage:
+			
+			break;
+		}
+
+
+		if (!inventory.HasHealth()) {
+			isDead = true;
+			RefreshPlayerAnimation();
+		}
 	}
 
 	void RefreshPlayerAnimation () {
+		if (isDead) {
+			animatorManager.PlayAnimation(inputController.orientationIndex, AnimatorManager.stateDead, 0);
+			return;
+		}
 
+		switch (gameState) {
+		case GameController.stateSearch:
+			if (isMoving) {
+				animatorManager.PlayAnimation(inputController.orientationIndex, AnimatorManager.stateWalk, 0);
+			} else {
+				animatorManager.PlayAnimation(inputController.orientationIndex, AnimatorManager.stateIdle, 0);
+			}
+
+			break;
+		case GameController.stateFight:
+			if (inputController.fire) {
+				animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, AnimatorManager.stateFire, 0);
+			} else {
+				if (isMoving) {
+					animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, AnimatorManager.stateWalk, 0);
+				} else {
+					animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, AnimatorManager.stateIdle, 0);
+				}
+			}
+
+			break;
+		case GameController.stateMenu:
+			animatorManager.PlayAnimation(inputController.orientationIndex, AnimatorManager.stateIdle, 0);
+
+			break;
+		case GameController.stateMessage:
+			animatorManager.PlayAnimation(inputController.orientationIndex, AnimatorManager.stateIdle, 0);
+
+			break;
+		}
+	}
+
+	void ApplyDamage (float damage) {
+		inventory.SubHealth(damage);
 	}
 }

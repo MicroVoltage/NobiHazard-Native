@@ -29,7 +29,7 @@ public class MessageController : MonoBehaviour {
 	}
 
 	public void ShowMessage (string imageName, string newMessage) {
-		gameController.gameState = 2;
+		gameController.gameState = GameController.stateMessage;
 
 		image.sprite = images[GetImageIndex(imageName)];
 		message.text = newMessage;
@@ -39,7 +39,7 @@ public class MessageController : MonoBehaviour {
 	}
 
 	public void HideMessage () {
-		gameController.gameState = 0;
+		gameController.gameState = GameController.stateSearch;
 
 		gameObject.SetActive(false);
 		showingMessage = false;

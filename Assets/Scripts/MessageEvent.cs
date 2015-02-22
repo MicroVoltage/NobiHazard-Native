@@ -2,26 +2,32 @@
 using System.Collections;
 
 public class MessageEvent : MonoBehaviour {
-	public string faceName;
+	public string imageName;
 	public string[] messages;
+
+	private InputController inputController;
 
 	private bool showingMessage = false;
 	private int messageIndex = 1;
+
+	void Start () {
+		inputController = GameController.inputController;
+	}
 
 	void OnExam () {
 		Debug.Log(gameObject.name + " - get message event");
 
 		showingMessage = true;
-		GameController.messageController.ShowMessage(faceName, messages[0]);
+		GameController.messageController.ShowMessage(imageName, messages[0]);
 	}
 
 	void Update () {
-		if (!showingMessage || !GameController.inputController.B) {
+		if (!showingMessage || !inputController.cancel) {
 			return;
 		}
 
 		if (messageIndex < messages.Length) {
-			GameController.messageController.ShowMessage(faceName, messages[messageIndex]);
+			GameController.messageController.ShowMessage(imageName, messages[messageIndex]);
 			messageIndex++;
 		} else {
 			GameController.messageController.HideMessage();

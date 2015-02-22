@@ -5,6 +5,7 @@ public class InputController : MonoBehaviour {
 	public Vector2 orientation;
 	public int orientationIndex;
 	public Vector2 direction;
+	public Vector2 normalizedDirection;
 
 	public float H;
 	public float V;
@@ -41,11 +42,10 @@ public class InputController : MonoBehaviour {
 		gameController = GameController.gameController;
 
 		orientation = Vector3.zero;
-		orientationIndex = 0;
+		orientationIndex = 2;
 	}
 
 	void Update () {
-		direction = new Vector2(H, V);
 		exam = false;
 		fire = false;
 		menu = false;
@@ -54,14 +54,14 @@ public class InputController : MonoBehaviour {
 		RefreshInputStates();
 
 		switch (gameController.gameState) {
-		case 0:
+		case GameController.stateSearch:
 			SetOrientation();
 
 			exam = Adown;
 			menu = Bdown;
 			shift = Sdown;
 			break;
-		case 1:
+		case GameController.stateFight:
 			if (!B) {
 				SetOrientation();
 			}
@@ -69,11 +69,10 @@ public class InputController : MonoBehaviour {
 			fire = A;
 			shift = Adown;
 			break;
-		case 2:
-
+		case GameController.stateMenu:
 
 			break;
-		case 3:
+		case GameController.stateMessage:
 			cancel = Adown || Bdown;
 			break;
 		default:
@@ -83,6 +82,9 @@ public class InputController : MonoBehaviour {
 	}
 
 	void SetOrientation () {
+		direction = new Vector2(H, V);
+		normalizedDirection = direction.normalized;
+
 		Vector2 newOrientation = Vector3.zero;
 		if (direction.sqrMagnitude > 1.0f) {
 			newOrientation = direction - orientation;
