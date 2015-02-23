@@ -46,9 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\AnimationController.cs" />
      <Compile Include="Assets\Scripts\AnimationEditor.cs" />
+     <Compile Include="Assets\Scripts\AnimationEvent.cs" />
      <Compile Include="Assets\Scripts\AnimatorManager.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\CharacterManager.cs" />
      <Compile Include="Assets\Scripts\EventActivator.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\InputController.cs" />
@@ -56,6 +59,7 @@
      <Compile Include="Assets\Scripts\MessageController.cs" />
      <Compile Include="Assets\Scripts\MessageEvent.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\SceneController.cs" />
      <Compile Include="Assets\Scripts\TileEditor.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
  <Reference Include="UnityEngine.UI">

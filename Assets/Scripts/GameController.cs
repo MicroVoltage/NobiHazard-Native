@@ -6,10 +6,14 @@ public class GameController : MonoBehaviour {
 	public static InputController inputController = null;
 	public static MessageController messageController = null;
 	public static Inventory inventory = null;
+	public static CharacterManager characterManager = null;
 
 	public const float gameScale = 2.0f;
 
 	public Transform cameraFocus;
+
+	public GameObject[] scenes;
+	public int sceneIndex;
 
 	/** gameState
 	 * 0: free search state
@@ -38,5 +42,18 @@ public class GameController : MonoBehaviour {
 		cameraFocus = GameObject.FindGameObjectWithTag("Player").transform;
 
 		gameState = 0;
+	}
+
+	public void AddScene (GameObject scene, int sceneIndex) {
+		if (scenes.Length < sceneIndex + 1) {
+			GameObject[] scenesX = scenes;
+			scenes = new GameObject[sceneIndex + 1];
+			System.Array.Copy(scenesX, scenes, scenesX.Length);
+		}
+
+		if (scenes[sceneIndex]) {
+			Debug.LogError(sceneIndex + " - repeated sceneIndex");
+		}
+		scenes[sceneIndex] = scene;
 	}
 }

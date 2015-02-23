@@ -5,6 +5,7 @@ using System.Collections;
 public class MessageController : MonoBehaviour {
 	public Sprite[] images;
 
+	public GameObject messageContainer;
 	public Image image;
 	public Text message;
 
@@ -34,14 +35,14 @@ public class MessageController : MonoBehaviour {
 		image.sprite = images[GetImageIndex(imageName)];
 		message.text = newMessage;
 
-		gameObject.SetActive(true);
+		messageContainer.SetActive(true);
 		showingMessage = true;
 	}
 
 	public void HideMessage () {
 		gameController.gameState = GameController.stateSearch;
 
-		gameObject.SetActive(false);
+		messageContainer.SetActive(false);
 		showingMessage = false;
 	}
 

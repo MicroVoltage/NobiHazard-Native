@@ -7,6 +7,10 @@ public class AnimatorManager : MonoBehaviour {
 	public static string s = "-";
 
 	public static string[] orientationNames = {"back", "right", "front", "left"};
+	public const int orientBack = 0;
+	public const int orientRight = 1;
+	public const int orientFront = 2;
+	public const int orientLeft = 3;
 
 	public string[] idleNames;
 	public string[] walkNames;

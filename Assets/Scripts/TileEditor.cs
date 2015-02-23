@@ -52,12 +52,12 @@ public class TileEditor : MonoBehaviour {
 		for (int x=1; x<mapSize.x; x++) {
 			Gizmos.DrawRay(
 				transform.position + new Vector3(x * tileSize, 0, 0),
-				Vector3.up * mapSize.x * tileSize);
+				Vector3.up * mapSize.y * tileSize);
 		}
 		for (int y=1; y<mapSize.y; y++) {
 			Gizmos.DrawRay(
 				transform.position + new Vector3(0, y * tileSize, 0),
-				Vector3.right * mapSize.y * tileSize);
+				Vector3.right * mapSize.x * tileSize);
 		}
 		
 		Gizmos.color = Color.white;
