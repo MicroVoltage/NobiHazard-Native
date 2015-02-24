@@ -22,7 +22,8 @@ public class EventActivator : MonoBehaviour {
 			return;
 		}
 
-		collider.gameObject.SendMessage("OnArrive", SendMessageOptions.DontRequireReceiver);
+		Debug.Log("OnApproach - even fired to " + collider.gameObject.name);
+		collider.gameObject.SendMessage("OnApproach", SendMessageOptions.DontRequireReceiver);
 	}
 
 	void OnTriggerStay2D (Collider2D collider) {

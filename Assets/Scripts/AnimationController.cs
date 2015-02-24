@@ -18,8 +18,6 @@ public class AnimationController : MonoBehaviour {
 
 	void Start () {
 		animatorManager = GetComponent<AnimatorManager>();
-
-		MoveTo(Vector2.one);
 	}
 
 	void Update () {
@@ -78,7 +76,7 @@ public class AnimationController : MonoBehaviour {
 	}
 
 	public void MoveTo (Vector2 position, float speed) {
-		wantedPosition = position;
+		wantedPosition = (Vector2)transform.position + position;
 		walkSpeed = speed;
 		playing = true;
 	}

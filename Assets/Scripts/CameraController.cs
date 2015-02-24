@@ -3,12 +3,25 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 	public Transform focus;
+	public bool isLocked;
+	public Vector2 lockedPosition;
 	public Vector2 safeRect;
 
 	private Vector3 wantedPosition;
 
+	void Awake () {
+		if (GameController.cameraController == null) {
+			GameController.cameraController = this;
+		} else if (GameController.cameraController != this) {
+			Destroy(gameObject);
+		}
+	}
+
 	void FixedUpdate () {
-		RefreshFocus();
+		if (isLocked) {
+			SetCameraPosition(lockedPosition);
+			return;
+		}
 
 		wantedPosition = transform.position;
 		if (focus.position.x > transform.position.x + safeRect.x) {
@@ -24,7 +37,18 @@ public class CameraController : MonoBehaviour {
 		transform.position = wantedPosition;
 	}
 
-	void RefreshFocus () {
-		focus = GameController.gameController.cameraFocus;
+	public void SetCameraFocus (Transform newFocus) {
+		isLocked = false;
+		focus = newFocus;
+	}
+
+	public void SetCameraPosition (Vector2 newPosition) {
+		transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
+	}
+
+	public void LockCameraPosition (Vector2 newPosition) {
+		isLocked = true;
+		lockedPosition = newPosition;
+		SetCameraPosition(newPosition);
 	}
 }

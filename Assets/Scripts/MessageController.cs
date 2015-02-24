@@ -25,8 +25,6 @@ public class MessageController : MonoBehaviour {
 
 	void Start () {
 		gameController = GameController.gameController;
-
-		HideMessage();
 	}
 
 	public void ShowMessage (string imageName, string newMessage) {
