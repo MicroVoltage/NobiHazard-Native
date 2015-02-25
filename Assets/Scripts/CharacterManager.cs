@@ -6,7 +6,7 @@ public class CharacterManager : MonoBehaviour {
 
 	public GameObject[] characterInstances;
 
-	public int heroIndex;
+	public int heroIndex = -1;
 
 	private GameController gameController;
 	private SceneController sceneController;

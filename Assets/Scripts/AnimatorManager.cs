@@ -94,6 +94,7 @@ public class AnimatorManager : MonoBehaviour {
 		
 		AnimatorStateInfo animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
 		if (!animatorStateInfo.IsName(animationName)) {
+//			Debug.Log(animationName + " - play animtion");
 			animator.Play(animationName, 0);
 		}
 	}
