@@ -22,12 +22,14 @@ public class GameController : MonoBehaviour {
 	 * 1: free fight state
 	 * 2: menu state
 	 * 3: message event state
+	 * 4: animtiton event state
 	 **/
 	public int gameState = 0;
 	public const int stateSearch = 0;
 	public const int stateFight = 1;
 	public const int stateMenu = 2;
 	public const int stateMessage = 3;
+	public const int stateAnimation = 4;
 
 
 	void Awake () {
@@ -87,12 +89,19 @@ public class GameController : MonoBehaviour {
 
 		scenes[sceneIndex].SetActive(false);
 	}
+	public void CloseScene () {
+		cameraController.LockCameraPosition(cameraController.transform.position);
+		
+		characterManager.DestroyCharacters();
+		
+		scenes[sceneIndex].SetActive(false);
+	}
 
 	public void OpenScene (int newSceneIndex, Vector2 startPosition) {
-		sceneIndex = newSceneIndex;
 		scenes[newSceneIndex].SetActive(true);
-		sceneControllers[newSceneIndex].eventLayer.BroadcastMessage("OnSceneEnter");
+		sceneControllers[newSceneIndex].eventLayer.BroadcastMessage("OnSceneEnter", sceneIndex);
 
+		sceneIndex = newSceneIndex;
 		cameraController.LockCameraPosition(startPosition);
 	}
 }

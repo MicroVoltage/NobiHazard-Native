@@ -9,24 +9,24 @@ public class MessageEvent : MonoBehaviour {
 	
 	void OnSceneEnter () {
 		if (autoStart) {
-			ShowMessage();
+			OnMessageEvent();
 		}
 	}
 	
 	void OnApproach () {
 		if (approachStart) {
-			ShowMessage();
+			OnMessageEvent();
 		}
 	}
 	
 	void OnExam () {
 		if (examStart) {
-			ShowMessage();
+			OnMessageEvent();
 		}
 	}
 	
 	void OnChainEnter () {
-		ShowMessage();
+		OnMessageEvent();
 	}
 	
 	void CallNextEvents () {
@@ -45,10 +45,12 @@ public class MessageEvent : MonoBehaviour {
 	private int messageIndex = 1;
 
 	void Start () {
+		gameObject.name = gameObject.name + "-message";
+
 		inputController = GameController.inputController;
 	}
 
-	void ShowMessage () {
+	void OnMessageEvent () {
 		Debug.Log(gameObject.name + " - get message event");
 
 		showingMessage = true;

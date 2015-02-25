@@ -15,9 +15,11 @@ public class AnimationController : MonoBehaviour {
 	public Vector2 wantedPosition;
 
 	private AnimatorManager animatorManager;
+//	private GameController gameController;
 
 	void Start () {
 		animatorManager = GetComponent<AnimatorManager>();
+//		gameController = GameController.gameController;
 	}
 
 	void Update () {
@@ -76,7 +78,7 @@ public class AnimationController : MonoBehaviour {
 	}
 
 	public void MoveTo (Vector2 position, float speed) {
-		wantedPosition = (Vector2)transform.position + position;
+		wantedPosition = position;
 		walkSpeed = speed;
 		playing = true;
 	}

@@ -9,24 +9,24 @@ public class EmptyEvent : MonoBehaviour {
 
 	void OnSceneEnter () {
 		if (autoStart) {
-			EmptyMethod();
+			OnEmptyEvent();
 		}
 	}
 
 	void OnApproach () {
 		if (approachStart) {
-			EmptyMethod();
+			OnEmptyEvent();
 		}
 	}
 
 	void OnExam () {
 		if (examStart) {
-			EmptyMethod();
+			OnEmptyEvent();
 		}
 	}
 
 	void OnChainEnter () {
-		EmptyMethod();
+		OnEmptyEvent();
 	}
 
 	void CallNextEvents () {
@@ -35,7 +35,12 @@ public class EmptyEvent : MonoBehaviour {
 		}
 	}
 
-	void EmptyMethod () {
+	void Start () {
+		gameObject.name = gameObject.name + "-empty";
+
+	}
+
+	void OnEmptyEvent () {
 
 		CallNextEvents();
 	}

@@ -75,6 +75,9 @@ public class InputController : MonoBehaviour {
 		case GameController.stateMessage:
 			cancel = Adown || Bdown;
 			break;
+		case GameController.stateAnimation:
+			
+			break;
 		default:
 			Debug.LogError(gameController.gameState + " - input state not exist");
 			break;

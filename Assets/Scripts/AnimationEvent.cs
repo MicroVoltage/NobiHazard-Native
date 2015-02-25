@@ -9,24 +9,24 @@ public class AnimationEvent : MonoBehaviour {
 	
 	void OnSceneEnter () {
 		if (autoStart) {
-			PlayAnimation();
+			OnAnimationEvent();
 		}
 	}
 	
 	void OnApproach () {
 		if (approachStart) {
-			PlayAnimation();
+			OnAnimationEvent();
 		}
 	}
 	
 	void OnExam () {
 		if (examStart) {
-			PlayAnimation();
+			OnAnimationEvent();
 		}
 	}
 	
 	void OnChainEnter () {
-		PlayAnimation();
+		OnAnimationEvent();
 	}
 	
 	void CallNextEvents () {
@@ -34,6 +34,9 @@ public class AnimationEvent : MonoBehaviour {
 			nextEvents[i].SendMessage("OnChainEnter");
 		}
 	}
+
+	public bool startAnimationSequence;
+	public bool endAnimationSequence;
 
 	public int animationEventSize;
 	[HideInInspector]
@@ -43,6 +46,7 @@ public class AnimationEvent : MonoBehaviour {
 
 	private CharacterManager characterManager;
 	private AnimationController animationController;
+	private GameController gameController;
 
 	private bool playingAnimation;
 	private int animationIndex;
@@ -59,11 +63,18 @@ public class AnimationEvent : MonoBehaviour {
 	}
 
 	void Start () {
-		characterManager = GameController.characterManager;
-	}
+		gameObject.name = gameObject.name + "-animation";
 
-	void PlayAnimation () {
+		characterManager = GameController.characterManager;
+		gameController = GameController.gameController;
+	}
+	
+	void OnAnimationEvent () {
 		Debug.Log(gameObject.name + " - get animation event");
+		if (startAnimationSequence) {
+			Debug.Log(gameObject.name + " - start animation sequence");
+			gameController.gameState = GameController.stateAnimation;
+		}
 
 		PlayAnimation(0);
 		playingAnimation = true;
@@ -75,22 +86,46 @@ public class AnimationEvent : MonoBehaviour {
 			Debug.LogError(characterIndexes[animationIndex] + " - character not instantiated");
 		}
 		animationController = characterManager.characterInstances[characterIndexes[animationIndex]].GetComponent<AnimationController>();
-		animationController.MoveTo(positions[animationIndex]);
+		animationController.MoveTo((Vector2)transform.position + positions[animationIndex] * GameController.gameScale);
 	}
 
 	void Update () {
-		if (!playingAnimation || !animationController.playing) {
+		if (!playingAnimation || animationController.playing) {
 			return;
 		}
 
 		if (animationIndex < positions.Length) {
+			Debug.Log(animationIndex + " - play animation");
 			PlayAnimation(animationIndex);
 			animationIndex++;
 		} else {
 			playingAnimation = false;
 			animationIndex = 1;
 
+			if (endAnimationSequence) {
+				Debug.Log(gameObject.name + " - end animation sequence");
+				gameController.gameState = GameController.stateSearch;
+			}
 			CallNextEvents();
+		}
+	}
+
+	public void OnDrawGizmosSelected () {
+		Gizmos.color = Color.gray;
+		for (int x=-8; x<8; x++) {
+			Gizmos.DrawRay(
+				transform.position + new Vector3(x * GameController.gameScale, -8, 0),
+				Vector3.up * 8 * GameController.gameScale);
+		}
+		for (int y=-8; y<8; y++) {
+			Gizmos.DrawRay(
+				transform.position + new Vector3(-8, y * GameController.gameScale, 0),
+				Vector3.right * 8 * GameController.gameScale);
+		}
+
+		Gizmos.color = Color.red;
+		for (int i=0; i<positions.Length; i++) {
+			Gizmos.DrawWireSphere((Vector2)transform.position + positions[i] * GameController.gameScale, 0.2f);
 		}
 	}
 }

@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\AnimationEvent.cs" />
      <Compile Include="Assets\Scripts\AnimatorManager.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\CharacterEvent.cs" />
      <Compile Include="Assets\Scripts\CharacterManager.cs" />
      <Compile Include="Assets\Scripts\EmptyEvent.cs" />
      <Compile Include="Assets\Scripts\EventActivator.cs" />

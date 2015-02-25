@@ -36,18 +36,24 @@ public class CharacterManager : MonoBehaviour {
 		GameObject character = (GameObject)Instantiate(characters[characterIndex], position, transform.rotation);
 		characterInstances[characterIndex] = character;
 		character.transform.parent = sceneController.eventLayer;
+
+		RefreshCharacterControllers();
+	}
+
+	public void DestroyCharacter (int characterIndex) {
+		if (characterInstances[characterIndex]) {
+			Destroy(characterInstances[characterIndex]);
+			characterInstances[characterIndex] = null;
+		}
 	}
 
 	public void DestroyCharacters () {
 		for (int i=0; i<characterInstances.Length; i++) {
-			if (characterInstances[i]) {
-				Destroy(characterInstances[i]);
-				characterInstances[i] = null;
-			}
+			DestroyCharacter(i);
 		}
 	}
 
-	public void AddHero (int characterIndex, Vector3 position) {
+	public void AddHero (int characterIndex, Vector2 position) {
 		AddCharacter(characterIndex, position);
 		ChangeHero(characterIndex);
 		RefreshCharacterControllers();
@@ -67,9 +73,11 @@ public class CharacterManager : MonoBehaviour {
 		for (int i=0; i<characterInstances.Length; i++) {
 			if (characterInstances[i]) {
 				if (i == heroIndex) {
+					Debug.Log(i + " - set hero");
 					characterInstances[i].GetComponent<PlayerController>().enabled = true;
 					characterInstances[i].GetComponent<AnimationController>().enabled = false;
 				} else {
+					Debug.Log(i + " - set character");
 					characterInstances[i].GetComponent<PlayerController>().enabled = false;
 					characterInstances[i].GetComponent<AnimationController>().enabled = true;
 				}
