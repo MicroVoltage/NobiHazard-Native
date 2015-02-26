@@ -36,9 +36,11 @@ public class GenericAnimationEvent : MonoBehaviour {
 		}
 	}
 
-	public bool startAnimationSequence;
+	private bool startAnimationSequence = true;
 	public bool endAnimationSequence;
 
+	public bool deleteParent;
+	public bool deleteSelf;
 	public float speed = 8.0f;
 	public float arriveRadius = 0.1f;
 
@@ -46,7 +48,7 @@ public class GenericAnimationEvent : MonoBehaviour {
 	public string[] names;
 	public Vector2[] positions;
 
-	public bool isPlaying;
+	private bool isPlaying;
 
 	private GameController gameController;
 	private Animator animator;
@@ -54,7 +56,7 @@ public class GenericAnimationEvent : MonoBehaviour {
 	private int animationIndex;
 	private Vector2 wantedPosition;
 	private Vector2 deltaPosition;
-	public int orientationIndex;
+	private int orientationIndex;
 	private string lastAnimationName;
 
 	void Start () {
@@ -88,6 +90,9 @@ public class GenericAnimationEvent : MonoBehaviour {
 					gameController.gameState = GameController.stateSearch;
 				}
 				CallNextEvents();
+				if (deleteSelf) {
+					Destroy(gameObject);
+				}
 				return;
 			}
 		}
@@ -110,6 +115,13 @@ public class GenericAnimationEvent : MonoBehaviour {
 			Debug.Log(gameObject.name + " - start generic animation sequence");
 			gameController.gameState = GameController.stateAnimation;
 		}
+		if (deleteParent) {
+			Debug.Log(transform.parent.name + " - parent deleted");
+			Transform oldParent = transform.parent;
+			transform.parent = transform.parent.parent;
+			Destroy(oldParent.gameObject);
+		}
+
 
 		isPlaying = true;
 		animationIndex = 0;

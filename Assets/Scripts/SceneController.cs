@@ -26,12 +26,12 @@ public class SceneController : MonoBehaviour {
 	}
 
 	void Update () {
-		if (eventTransforms.Length != eventLayer.childCount) {
+//		if (eventTransforms.Length != eventLayer.childCount) {
 			eventTransforms = new Transform[eventLayer.childCount];
 			for (int i=0; i<eventTransforms.Length; i++) {
 				eventTransforms[i] = eventLayer.GetChild(i);
 			}
-		}
+//		}
 
 		maxY = eventTransforms[0].position.y;
 		minY = eventTransforms[0].position.y;

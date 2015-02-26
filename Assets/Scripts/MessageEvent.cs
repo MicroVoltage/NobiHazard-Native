@@ -55,6 +55,7 @@ public class MessageEvent : MonoBehaviour {
 
 		showingMessage = true;
 		GameController.messageController.ShowMessage(imageName, messages[0]);
+		inputController.cancel = false;
 	}
 
 	void Update () {
