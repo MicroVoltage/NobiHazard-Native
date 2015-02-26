@@ -80,7 +80,7 @@ public class CharacterEvent : MonoBehaviour {
 
 			break;
 		case CharaterEventType.TeleportHero:
-			gameController.CloseScene();
+			gameController.CloseScene(gameController.sceneIndex);
 			gameController.OpenScene(newSceneIndes, startPosition);
 
 			break;

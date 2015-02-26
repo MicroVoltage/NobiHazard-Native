@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour {
 
 	public GameObject[] scenes;
 	public SceneController[] sceneControllers;
-	public int sceneIndex;
+	public int sceneIndex = -1;
 
 	/** gameState
 	 * 0: free search state
@@ -44,9 +44,14 @@ public class GameController : MonoBehaviour {
 
 	void Start () {
 		gameState = 0;
-		sceneIndex = 0;
-		messageController.HideMessage();
-		OpenScene(0, Vector2.zero);
+		sceneIndex = -1;
+	}
+
+	void Update () {
+		if (sceneIndex == -1) {
+			messageController.HideMessage();
+			OpenScene(0, Vector2.zero);
+		}
 	}
 
 	/** AddScene
@@ -87,13 +92,6 @@ public class GameController : MonoBehaviour {
 		
 		characterManager.DestroyCharacters();
 
-		scenes[sceneIndex].SetActive(false);
-	}
-	public void CloseScene () {
-		cameraController.LockCameraPosition(cameraController.transform.position);
-		
-		characterManager.DestroyCharacters();
-		
 		scenes[sceneIndex].SetActive(false);
 	}
 
