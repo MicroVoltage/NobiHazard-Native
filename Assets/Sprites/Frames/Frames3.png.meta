@@ -1,7 +1,17 @@
 fileFormatVersion: 2
 guid: 594ad2a34a83f4c67919b872bd037b2f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Frames3_0
+    21300002: Frames3_1
+    21300004: Frames3_2
+    21300006: Frames3_3
+    21300008: Frames3_4
+    21300010: Frames3_5
+    21300012: Frames3_6
+    21300014: Frames3_7
+    21300016: Frames3_8
+    21300018: Frames3_9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -21,27 +31,127 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 8
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Frames3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 711
+        width: 320
+        height: 313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Frames3_1
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 784
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Frames3_2
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 784
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Frames3_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 443
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Frames3_4
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 516
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Frames3_5
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 516
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Frames3_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 289
+        width: 578
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Frames3_7
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 259
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Frames3_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 112
+        width: 304
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Frames3_9
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

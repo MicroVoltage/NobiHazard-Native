@@ -1,17 +1,18 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GenericAnimationEvent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/HeroAnimationEvent.cs">
     <Files>
-      <File FileName="Assets/Scripts/MessageEvent.cs" Line="67" Column="48" />
-      <File FileName="Assets/Scripts/GenericAnimationEvent.cs" Line="70" Column="1" />
-      <File FileName="Assets/Scripts/AnimationEvent.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AnimatorManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AnimationController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MessageController.cs" Line="45" Column="3" />
+      <File FileName="Assets/Scripts/FrameEvent.cs" Line="42" Column="16" />
+      <File FileName="Assets/Scripts/FrameController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MessageController.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GameController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CharacterEvent.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/SceneController.cs" Line="34" Column="3" />
-      <File FileName="Assets/Scripts/CharacterManager.cs" Line="31" Column="1" />
+      <File FileName="Assets/Scripts/MessageEvent.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GenericAnimationEvent.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GenericEvent.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnumerationEvent.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AnimationEvent.cs" Line="5" Column="1" />
+      <File FileName="Assets/Scripts/HeroAnimationEvent.cs" Line="94" Column="38" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

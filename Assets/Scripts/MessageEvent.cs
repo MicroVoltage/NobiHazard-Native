@@ -40,6 +40,7 @@ public class MessageEvent : MonoBehaviour {
 	public string[] messages;
 
 	private InputController inputController;
+	private MessageController messageController;
 
 	private bool showingMessage = false;
 	private int messageIndex = 1;
@@ -48,13 +49,15 @@ public class MessageEvent : MonoBehaviour {
 		gameObject.name = gameObject.name + "-message";
 
 		inputController = GameController.inputController;
+		messageController = GameController.messageController;
 	}
 
 	void OnMessageEvent () {
 		Debug.Log(gameObject.name + " - get message event");
 
 		showingMessage = true;
-		GameController.messageController.ShowMessage(imageName, messages[0]);
+		messageController.ShowMessage(imageName, messages[0]);
+
 		inputController.cancel = false;
 	}
 
@@ -64,10 +67,10 @@ public class MessageEvent : MonoBehaviour {
 		}
 
 		if (messageIndex < messages.Length) {
-			GameController.messageController.ShowMessage(imageName, messages[messageIndex]);
+			messageController.ShowMessage(imageName, messages[messageIndex]);
 			messageIndex++;
 		} else {
-			GameController.messageController.HideMessage();
+			messageController.HideMessage();
 			showingMessage = false;
 			messageIndex = 1;
 

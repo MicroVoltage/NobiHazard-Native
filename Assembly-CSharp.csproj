@@ -53,10 +53,14 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CharacterEvent.cs" />
      <Compile Include="Assets\Scripts\CharacterManager.cs" />
-     <Compile Include="Assets\Scripts\EmptyEvent.cs" />
+     <Compile Include="Assets\Scripts\EnumerationEvent.cs" />
      <Compile Include="Assets\Scripts\EventActivator.cs" />
+     <Compile Include="Assets\Scripts\FrameController.cs" />
+     <Compile Include="Assets\Scripts\FrameEvent.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GenericAnimationEvent.cs" />
+     <Compile Include="Assets\Scripts\GenericEvent.cs" />
+     <Compile Include="Assets\Scripts\HeroAnimationEvent.cs" />
      <Compile Include="Assets\Scripts\InputController.cs" />
      <Compile Include="Assets\Scripts\Inventory.cs" />
      <Compile Include="Assets\Scripts\MessageController.cs" />

@@ -12,8 +12,7 @@ public class MessageController : MonoBehaviour {
 	public bool showingMessage;
 
 	private GameController gameController;
-	private int originalGameState;
-	
+
 
 	void Awake () {
 		if (GameController.messageController == null) {

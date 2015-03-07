@@ -1,7 +1,18 @@
 fileFormatVersion: 2
 guid: 5b20f5fb321494340a1dab7b85922a3f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: mama-1
+    21300002: mama-2
+    21300004: mama-3
+    21300006: mama-4
+    21300008: licker-1
+    21300010: licker-2
+    21300012: chameleon-1
+    21300014: chameleon-2
+    21300016: chameleon-bg
+    21300018: chameleon-3
+    21300020: chameleon-4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -21,27 +32,137 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 8
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: mama-1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 784
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mama-2
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 784
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mama-3
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 784
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: mama-4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 521
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: licker-1
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 521
+        width: 443
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: licker-2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 254
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chameleon-1
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 254
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chameleon-2
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 254
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chameleon-bg
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chameleon-3
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 25
+        width: 267
+        height: 215
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: chameleon-4
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 320
+        height: 240
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
 	public static Inventory inventory = null;
 	public static CharacterManager characterManager = null;
 	public static CameraController cameraController = null;
+	public static FrameController frameController = null;
 
 	public const float gameScale = 2.0f;
 
@@ -30,6 +31,7 @@ public class GameController : MonoBehaviour {
 	public const int stateMenu = 2;
 	public const int stateMessage = 3;
 	public const int stateAnimation = 4;
+	public const int stateFrame = 5;
 
 
 	void Awake () {
