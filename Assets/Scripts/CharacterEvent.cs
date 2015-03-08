@@ -96,14 +96,12 @@ public class CharacterEvent : MonoBehaviour {
 	
 	private CharacterManager characterManager;
 	private InputController inputController;
-	private GameController gameController;
 
 	void Start () {
 		gameObject.name = gameObject.name + "-character";
 
 		characterManager = GameController.characterManager;
 		inputController = GameController.inputController;
-		gameController = GameController.gameController;
 	}
 
 	void OnEvent () {
@@ -122,11 +120,6 @@ public class CharacterEvent : MonoBehaviour {
 			break;
 		case CharaterEventType.DestroyCharacter:
 			characterManager.DestroyCharacter(charaterIndex);
-
-			break;
-		case CharaterEventType.TeleportHero:
-			gameController.CloseScene(gameController.sceneIndex);
-			gameController.OpenScene(newSceneIndes, startPosition);
 
 			break;
 		}

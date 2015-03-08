@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class GenericSpriteEvent : MonoBehaviour {
+public class TeleportEvent : MonoBehaviour {
 	public bool autoStart;
 	public bool approachStart;
 	public bool examStart;
@@ -87,33 +86,31 @@ public class GenericSpriteEvent : MonoBehaviour {
 	
 	/******************************* Event Alike *******************************/
 	
-
-	public Sprite sprite;
-
-	public bool deleteParent;
-	public bool deleteSelf;
-
-	private SpriteRenderer spriteRenderer;
-	private bool readyToDie;
+	
+	public int targetSceneIndex;
+	public Vector2 targetPosition;
 
 	void Start () {
-		spriteRenderer = GetComponent<SpriteRenderer>();
+		gameObject.name = gameObject.name + "-teleport";
 	}
 
 	public void OnEvent () {
-		if (deleteParent && !readyToDie) {
-			Debug.Log(transform.parent.name + " - parent deleted");
-			Transform oldParent = transform.parent;
-			transform.parent = transform.parent.parent;
-			Destroy(oldParent.gameObject);
-		}
+		Debug.Log(gameObject.name + " - get teleport event");
 
-		if (deleteSelf && readyToDie) {
-			Destroy(gameObject);
-		}
+		SceneController targetSceneController = GameController.gameController.sceneControllers[targetSceneIndex];
+		GameObject heroInstance = GameController.characterManager.heroInstance;
 
-		spriteRenderer.sprite = sprite;
-		readyToDie = true;
-		CallNextEvents();
+		heroInstance.transform.parent = targetSceneController.eventLayer;
+		heroInstance.transform.position = (Vector3)targetPosition;
+		GameController.gameController.CloseScenes();
+		GameController.gameController.OpenScene(targetSceneIndex, targetPosition);
+	}
+
+	public void OnDrawGizmosSelected () {
+		Gizmos.color = Color.magenta;
+		Gizmos.DrawLine(transform.position, targetPosition);
+		
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireSphere(targetPosition, 1);
 	}
 }

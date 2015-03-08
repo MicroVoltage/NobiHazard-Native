@@ -5,6 +5,7 @@ public class CharacterManager : MonoBehaviour {
 	public GameObject[] characters;
 
 	public GameObject[] characterInstances;
+	public GameObject heroInstance;
 
 	public int heroIndex = -1;
 
@@ -48,6 +49,7 @@ public class CharacterManager : MonoBehaviour {
 	}
 
 	public void DestroyCharacters () {
+		heroInstance = null;
 		for (int i=0; i<characterInstances.Length; i++) {
 			DestroyCharacter(i);
 		}
@@ -61,6 +63,7 @@ public class CharacterManager : MonoBehaviour {
 
 	public void ChangeHero (int characterIndex) {
 		heroIndex = characterIndex;
+		heroInstance = characterInstances[heroIndex];
 		if (cameraController.focus != characterInstances[characterIndex].transform) {
 			cameraController.SetCameraFocus(characterInstances[characterIndex].transform);
 			cameraController.SetCameraPosition(characterInstances[characterIndex].transform.position);
@@ -71,13 +74,11 @@ public class CharacterManager : MonoBehaviour {
 
 	void RefreshCharacterControllers () {
 		for (int i=0; i<characterInstances.Length; i++) {
-			if (characterInstances[i]) {
+			if (characterInstances[i] != null) {
 				if (i == heroIndex) {
-					Debug.Log(i + " - set hero");
 					characterInstances[i].GetComponent<PlayerController>().enabled = true;
 					characterInstances[i].GetComponent<AnimationController>().enabled = false;
 				} else {
-					Debug.Log(i + " - set character");
 					characterInstances[i].GetComponent<PlayerController>().enabled = false;
 					characterInstances[i].GetComponent<AnimationController>().enabled = true;
 				}

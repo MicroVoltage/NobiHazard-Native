@@ -20,6 +20,10 @@ public class StateController : MonoBehaviour {
 		} else if (GameController.stateController != this) {
 			Destroy(gameObject);
 		}
+
+		if (PlayerPrefs.HasKey(stateIntNames[0])) {
+			SaveAll();
+		}
 	}
 
 	public void LoadAll () {

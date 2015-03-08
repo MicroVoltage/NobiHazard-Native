@@ -86,24 +86,17 @@ public class GameController : MonoBehaviour {
 		}
 		sceneControllers[sceneIndex] = scene.GetComponent<SceneController>();
 
-		CloseScene(sceneIndex);
+		CloseScenes();
 	}
 
 	public void CloseScenes () {
 		cameraController.LockCameraPosition(cameraController.transform.position);
 
-		characterManager.DestroyCharacters();
+//		characterManager.DestroyCharacters();
 
 		for (int i=0; i<scenes.Length; i++) {
 			scenes[i].SetActive(false);
 		}
-	}
-	public void CloseScene (int sceneIndex) {
-		cameraController.LockCameraPosition(cameraController.transform.position);
-		
-		characterManager.DestroyCharacters();
-
-		scenes[sceneIndex].SetActive(false);
 	}
 
 	public void OpenScene (int newSceneIndex, Vector2 startPosition) {
@@ -112,5 +105,8 @@ public class GameController : MonoBehaviour {
 
 		sceneIndex = newSceneIndex;
 		cameraController.LockCameraPosition(startPosition);
+		if (characterManager.heroInstance != null) {
+			cameraController.SetCameraFocus(characterManager.heroInstance.transform);
+		}
 	}
 }

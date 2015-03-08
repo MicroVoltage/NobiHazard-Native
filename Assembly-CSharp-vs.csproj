@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\SceneController.cs" />
      <Compile Include="Assets\Scripts\StateController.cs" />
      <Compile Include="Assets\Scripts\StateEvent.cs" />
+     <Compile Include="Assets\Scripts\TeleportEvent.cs" />
      <Compile Include="Assets\Scripts\TileEditor.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
  <Reference Include="UnityEngine.UI">
