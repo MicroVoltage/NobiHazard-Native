@@ -3,44 +3,89 @@ using System.Collections;
 
 public class CharacterEvent : MonoBehaviour {
 	public bool autoStart;
-	public bool specifyEnterScene;
-	public int specifyEnterSceneIndex;
-
 	public bool approachStart;
 	public bool examStart;
-
+	
+	public enum Comparation {Equal, Less, More};
+	public string[] requiredIntNames;
+	public Comparation[] requiredIntComparations;
+	public int[] requiredInts;
+	public string[] requiredIntBoolNames;
+	
 	public GameObject[] nextEvents;
 	
-	void OnSceneEnter (int enterSceneIndex) {
+	public void OnSceneEnter () {
 		if (autoStart) {
-			if (specifyEnterScene && specifyEnterSceneIndex != enterSceneIndex) {
+			if (!MeetRequirements()) {
 				return;
 			}
-			OnCharacterEvent();
+			OnEvent();
 		}
 	}
 	
-	void OnApproach () {
+	public void OnApproach () {
 		if (approachStart) {
-			OnCharacterEvent();
+			if (!MeetRequirements()) {
+				return;
+			}
+			OnEvent();
 		}
 	}
 	
-	void OnExam () {
+	public void OnExam () {
 		if (examStart) {
-			OnCharacterEvent();
+			if (!MeetRequirements()) {
+				return;
+			}
+			OnEvent();
 		}
 	}
 	
-	void OnChainEnter () {
-		OnCharacterEvent();
+	public void OnChainEnter () {
+		if (!MeetRequirements()) {
+			return;
+		}
+		OnEvent();
 	}
 	
-	void CallNextEvents () {
+	public bool MeetRequirements () {
+		for (int i=0; i<requiredIntNames.Length; i++) {
+			switch (requiredIntComparations[i]) {
+			case Comparation.Equal:
+				if (!(GameController.stateController.GetInt(requiredIntNames[i]) == requiredInts[i])) {
+					return false;
+				}
+				break;
+			case Comparation.Less:
+				if (!(GameController.stateController.GetInt(requiredIntNames[i]) < requiredInts[i])) {
+					return false;
+				}
+				break;
+			case Comparation.More:
+				if (!(GameController.stateController.GetInt(requiredIntNames[i]) > requiredInts[i])) {
+					return false;
+				}
+				break;
+			}
+		}
+		
+		for (int i=0; i<requiredIntBoolNames.Length; i++) {
+			if (!GameController.stateController.GetIntBool(requiredIntBoolNames[i])) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+	
+	public void CallNextEvents () {
 		for (int i=0; i<nextEvents.Length; i++) {
 			nextEvents[i].SendMessage("OnChainEnter");
 		}
 	}
+	
+	/******************************* Event Alike *******************************/
+
 
 	public enum CharaterEventType {AddCharacter, AddHero, DestroyCharacter, TeleportHero};
 	public CharaterEventType eventType;
@@ -61,7 +106,7 @@ public class CharacterEvent : MonoBehaviour {
 		gameController = GameController.gameController;
 	}
 
-	void OnCharacterEvent () {
+	void OnEvent () {
 		Debug.Log(gameObject.name + " - get animation event");
 
 		switch (eventType) {

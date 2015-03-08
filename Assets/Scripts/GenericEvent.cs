@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MessageEvent : MonoBehaviour {
+public class GenericEvent : MonoBehaviour {
 	public bool autoStart;
 	public bool approachStart;
 	public bool examStart;
-	
+
 	public enum Comparation {Equal, Less, More};
 	public string[] requiredIntNames;
 	public Comparation[] requiredIntComparations;
 	public int[] requiredInts;
 	public string[] requiredIntBoolNames;
-	
+
 	public GameObject[] nextEvents;
-	
+
 	public void OnSceneEnter () {
 		if (autoStart) {
 			if (!MeetRequirements()) {
@@ -22,7 +22,7 @@ public class MessageEvent : MonoBehaviour {
 			OnEvent();
 		}
 	}
-	
+
 	public void OnApproach () {
 		if (approachStart) {
 			if (!MeetRequirements()) {
@@ -31,7 +31,7 @@ public class MessageEvent : MonoBehaviour {
 			OnEvent();
 		}
 	}
-	
+
 	public void OnExam () {
 		if (examStart) {
 			if (!MeetRequirements()) {
@@ -40,14 +40,14 @@ public class MessageEvent : MonoBehaviour {
 			OnEvent();
 		}
 	}
-	
+
 	public void OnChainEnter () {
 		if (!MeetRequirements()) {
 			return;
 		}
 		OnEvent();
 	}
-	
+
 	public bool MeetRequirements () {
 		for (int i=0; i<requiredIntNames.Length; i++) {
 			switch (requiredIntComparations[i]) {
@@ -68,64 +68,27 @@ public class MessageEvent : MonoBehaviour {
 				break;
 			}
 		}
-		
+
 		for (int i=0; i<requiredIntBoolNames.Length; i++) {
 			if (!GameController.stateController.GetIntBool(requiredIntBoolNames[i])) {
 				return false;
 			}
 		}
-		
+
 		return true;
 	}
-	
+
 	public void CallNextEvents () {
 		for (int i=0; i<nextEvents.Length; i++) {
 			nextEvents[i].SendMessage("OnChainEnter");
 		}
 	}
-	
+
 	/******************************* Event Alike *******************************/
-
 	
-	public string imageName;
-	public string[] messages;
 
-	private InputController inputController;
-	private MessageController messageController;
+	public void OnEvent () {
 
-	private bool showingMessage = false;
-	private int messageIndex = 1;
-
-	void Start () {
-		gameObject.name = gameObject.name + "-message";
-
-		inputController = GameController.inputController;
-		messageController = GameController.messageController;
-	}
-
-	void OnEvent () {
-		Debug.Log(gameObject.name + " - get message event");
-
-		showingMessage = true;
-		messageController.ShowMessage(imageName, messages[0]);
-
-		inputController.cancel = false;
-	}
-
-	void Update () {
-		if (!showingMessage || !inputController.cancel) {
-			return;
-		}
-
-		if (messageIndex < messages.Length) {
-			messageController.ShowMessage(imageName, messages[messageIndex]);
-			messageIndex++;
-		} else {
-			messageController.HideMessage();
-			showingMessage = false;
-			messageIndex = 1;
-
-			CallNextEvents();
-		}
+		CallNextEvents();
 	}
 }

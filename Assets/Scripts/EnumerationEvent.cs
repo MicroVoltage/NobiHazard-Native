@@ -5,28 +5,77 @@ public class EnumerationEvent : MonoBehaviour {
 	public bool autoStart;
 	public bool approachStart;
 	public bool examStart;
+	
+	public enum Comparation {Equal, Less, More};
+	public string[] requiredIntNames;
+	public Comparation[] requiredIntComparations;
+	public int[] requiredInts;
+	public string[] requiredIntBoolNames;
+	
 	public GameObject[] nextEvents;
-
+	
 	public void OnSceneEnter () {
 		if (autoStart) {
-			OnEnumerationEvent();
+			if (!MeetRequirements()) {
+				return;
+			}
+			OnEvent();
 		}
 	}
 	
 	public void OnApproach () {
 		if (approachStart) {
-			OnEnumerationEvent();
+			if (!MeetRequirements()) {
+				return;
+			}
+			OnEvent();
 		}
 	}
 	
 	public void OnExam () {
 		if (examStart) {
-			OnEnumerationEvent();
+			if (!MeetRequirements()) {
+				return;
+			}
+			OnEvent();
 		}
 	}
 	
 	public void OnChainEnter () {
-		OnEnumerationEvent();
+		if (!MeetRequirements()) {
+			return;
+		}
+		OnEvent();
+	}
+	
+	public bool MeetRequirements () {
+		for (int i=0; i<requiredIntNames.Length; i++) {
+			switch (requiredIntComparations[i]) {
+			case Comparation.Equal:
+				if (!(GameController.stateController.GetInt(requiredIntNames[i]) == requiredInts[i])) {
+					return false;
+				}
+				break;
+			case Comparation.Less:
+				if (!(GameController.stateController.GetInt(requiredIntNames[i]) < requiredInts[i])) {
+					return false;
+				}
+				break;
+			case Comparation.More:
+				if (!(GameController.stateController.GetInt(requiredIntNames[i]) > requiredInts[i])) {
+					return false;
+				}
+				break;
+			}
+		}
+		
+		for (int i=0; i<requiredIntBoolNames.Length; i++) {
+			if (!GameController.stateController.GetIntBool(requiredIntBoolNames[i])) {
+				return false;
+			}
+		}
+		
+		return true;
 	}
 	
 	public void CallNextEvents () {
@@ -34,13 +83,16 @@ public class EnumerationEvent : MonoBehaviour {
 			nextEvents[i].SendMessage("OnChainEnter");
 		}
 	}
+	
+	/******************************* Event Alike *******************************/
+
 
 	public GameObject[] events;
 	public bool[] sameTime;
 
 	public int eventIndex;
 	
-	public void OnEnumerationEvent () {
+	public void OnEvent () {
 		if (eventIndex >= events.Length) {
 			eventIndex = 0;
 			CallNextEvents();
