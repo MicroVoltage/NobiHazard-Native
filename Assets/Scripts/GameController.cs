@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameController : MonoBehaviour {
 	public static GameController gameController = null;
 	public static InputController inputController = null;
 	public static MessageController messageController = null;
-	public static Inventory inventory = null;
+	public static InventoryController inventoryController = null;
 	public static CharacterManager characterManager = null;
 	public static CameraController cameraController = null;
 	public static FrameController frameController = null;
+	public static StateController stateController = null;
 
 	public const float gameScale = 2.0f;
+
+	public Canvas canvas;
 
 	public Transform cameraFocus;
 
@@ -47,11 +51,16 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		gameState = 0;
 		sceneIndex = -1;
+
+		canvas.enabled = true;
+
+		stateController.LoadAll();
 	}
 
 	void Update () {
 		if (sceneIndex == -1) {
 			messageController.HideMessage();
+			frameController.HideFrame();
 			OpenScene(0, Vector2.zero);
 		}
 	}

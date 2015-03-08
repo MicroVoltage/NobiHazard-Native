@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class WeaponController : MonoBehaviour {
@@ -20,7 +20,7 @@ public class WeaponController : MonoBehaviour {
 	public int[] bulletCounts;
 
 	private InputController inputController;
-	private Inventory inventory;
+	private InventoryController inventory;
 
 	private float lastFireTime;
 
@@ -55,7 +55,7 @@ public class WeaponController : MonoBehaviour {
 
 	void Start () {
 		inputController = GameController.inputController;
-		inventory = GetComponent<Inventory>();
+		inventory = GetComponent<InventoryController>();
 
 		bulletCounts = new int[names.Length];
 	}

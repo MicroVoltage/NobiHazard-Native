@@ -130,15 +130,16 @@ public class AnimationEditor : MonoBehaviour {
 
 	void SortFrames () {
 		sortedFrames = new Sprite[frames.Length];
-//		animationNames = new string[4 * 16];
-//		isOneFrame = new bool[4 * 16];
+		animationNames = new string[frames.Length * 4];
+		isOneFrame = new bool[animationNames.Length];
 		frameTextures = new Texture2D[frames.Length];
 
 		int g = 0;
 		for (int i=0; i<4; i++) {
 			int iAnchorY = 384 - i * 128;
 
-			for (int j=0; j<4; j++) {
+			//for (int j=0; j<4; j++) {
+			for (int j=0; j<7; j++) {
 				int jAnchorX = j * 72;
 
 				for (int k=0; k<4; k++) {

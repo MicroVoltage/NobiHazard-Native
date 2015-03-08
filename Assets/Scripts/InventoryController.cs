@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Inventory : MonoBehaviour {
+public class InventoryController : MonoBehaviour {
 	public float maxHealth = 100.0f;
 	public float health = 100.0f;
 
@@ -35,9 +35,9 @@ public class Inventory : MonoBehaviour {
 	}
 
 	void Awake () {
-		if (GameController.inventory == null) {
-			GameController.inventory = this;
-		} else if (GameController.inventory != this) {
+		if (GameController.inventoryController == null) {
+			GameController.inventoryController = this;
+		} else if (GameController.inventoryController != this) {
 			Destroy(gameObject);
 		}
 	}

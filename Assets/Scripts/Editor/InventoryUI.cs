@@ -1,13 +1,13 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEditor;
 using System.Collections;
 
-[CustomEditor(typeof(Inventory))]
+[CustomEditor(typeof(InventoryController))]
 public class InventoryUI : Editor {
-	Inventory inventory;
+	InventoryController inventory;
 
 	void OnEnable () {
-		inventory = (Inventory)target;
+		inventory = (InventoryController)target;
 	}
 
 	public override void OnInspectorGUI () {

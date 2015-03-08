@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 [RequireComponent(typeof(AnimatorManager), typeof(WeaponController))]
@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
 	private GameController gameController;
 	private InputController inputController;
 	private AnimatorManager animatorManager;
-	private Inventory inventory;
+	private InventoryController inventory;
 	private WeaponController weaponController;
 
 	private int gameState;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour {
 		gameController = GameController.gameController;
 		inputController = GameController.inputController;
 		animatorManager = GetComponent<AnimatorManager>();
-		inventory = GameController.inventory;
+		inventory = GameController.inventoryController;
 		weaponController = GetComponent<WeaponController>();
 	}
 

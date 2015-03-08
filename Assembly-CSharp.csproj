@@ -60,13 +60,16 @@
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GenericAnimationEvent.cs" />
      <Compile Include="Assets\Scripts\GenericEvent.cs" />
+     <Compile Include="Assets\Scripts\GenericSpriteEvent.cs" />
      <Compile Include="Assets\Scripts\HeroAnimationEvent.cs" />
      <Compile Include="Assets\Scripts\InputController.cs" />
-     <Compile Include="Assets\Scripts\Inventory.cs" />
+     <Compile Include="Assets\Scripts\InventoryController.cs" />
      <Compile Include="Assets\Scripts\MessageController.cs" />
      <Compile Include="Assets\Scripts\MessageEvent.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SceneController.cs" />
+     <Compile Include="Assets\Scripts\StateController.cs" />
+     <Compile Include="Assets\Scripts\StateEvent.cs" />
      <Compile Include="Assets\Scripts\TileEditor.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
  <Reference Include="UnityEngine.UI">
