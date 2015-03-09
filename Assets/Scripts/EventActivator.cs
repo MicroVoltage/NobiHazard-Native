@@ -12,7 +12,7 @@ public class EventActivator : MonoBehaviour {
 		eventDetector = GetComponent<BoxCollider2D>();
 		gameController = GameController.gameController;
 		
-		eventDetector.size = new Vector2(GameController.gameScale, GameController.gameScale);
+		eventDetector.size = new Vector2(GameController.gameScale / 2, GameController.gameScale / 2);
 	}
 	
 	void Update () {

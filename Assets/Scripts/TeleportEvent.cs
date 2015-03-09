@@ -106,6 +106,8 @@ public class TeleportEvent : MonoBehaviour {
 	
 	public int targetSceneIndex;
 	public Vector2 targetPosition;
+	public enum Orientation {Back, Right, Front, Left};
+	public Orientation newOrientation;
 
 	void Start () {
 		gameObject.name = gameObject.name + "-teleport";
@@ -119,6 +121,8 @@ public class TeleportEvent : MonoBehaviour {
 
 		heroInstance.transform.parent = targetSceneController.eventLayer;
 		heroInstance.transform.position = (Vector3)targetPosition;
+
+		GameController.inputController.SetOrientationIndex((int)newOrientation);
 		GameController.gameController.CloseScenes();
 		GameController.gameController.OpenScene(targetSceneIndex, targetPosition);
 	}

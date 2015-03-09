@@ -78,6 +78,9 @@ public class InputController : MonoBehaviour {
 		case GameController.stateAnimation:
 			
 			break;
+		case GameController.stateFrame:
+
+			break;
 		default:
 			Debug.LogError(gameController.gameState + " - input state not exist");
 			break;
@@ -112,6 +115,27 @@ public class InputController : MonoBehaviour {
 		} else if (orientation.x < 0) {
 			orientationIndex = 3;
 		}
+	}
+	public void SetOrientationIndex (int newOrientationIndex) {
+		switch (newOrientationIndex) {
+		case 0:
+			orientation.x = 0;
+			orientation.y = 1;
+			break;
+		case 1:
+			orientation.x = 1;
+			orientation.y = 0;
+			break;
+		case 2:
+			orientation.x = 0;
+			orientation.y = -1;
+			break;
+		case 3:
+			orientation.x = -1;
+			orientation.y = 0;
+			break;
+		}
+		orientationIndex = newOrientationIndex;
 	}
 
 	void RefreshInputStates () {

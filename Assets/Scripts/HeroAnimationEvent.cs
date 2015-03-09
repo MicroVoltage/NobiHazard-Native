@@ -107,6 +107,7 @@ public class HeroAnimationEvent : MonoBehaviour {
 	public bool startAnimationSequence;
 	public bool endAnimationSequence;
 
+	public bool relative;
 	public Vector2[] positions;
 	
 	private CharacterManager characterManager;
@@ -145,8 +146,14 @@ public class HeroAnimationEvent : MonoBehaviour {
 	}
 	
 	void PlayAnimation (int animationIndex) {
-		animationController = characterManager.characterInstances[characterManager.heroIndex].GetComponent<AnimationController>();
-		animationController.MoveTo((Vector2)transform.position + positions[animationIndex] * GameController.gameScale);
+		animationController = characterManager.heroInstance.GetComponent<AnimationController>();
+		if (relative) {
+			animationController.MoveTo(
+				(Vector2)characterManager.heroInstance.transform.position + positions[animationIndex] * GameController.gameScale);
+		} else {
+			animationController.MoveTo(
+				(Vector2)transform.position + positions[animationIndex] * GameController.gameScale);
+		}
 	}
 	
 	void Update () {
@@ -161,6 +168,8 @@ public class HeroAnimationEvent : MonoBehaviour {
 		} else {
 			hero.GetComponent<PlayerController>().enabled = true;
 			hero.GetComponent<AnimationController>().enabled = false;
+
+			GameController.inputController.SetOrientationIndex(animationController.orientationIndex);
 
 			playingAnimation = false;
 			animationIndex = 1;
@@ -187,8 +196,16 @@ public class HeroAnimationEvent : MonoBehaviour {
 		}
 		
 		Gizmos.color = Color.red;
+		Vector2 position = Vector2.zero;
+		if (relative) {
+			Gizmos.color = Color.magenta;
+		}
 		for (int i=0; i<positions.Length; i++) {
-			Gizmos.DrawWireSphere((Vector2)transform.position + positions[i] * GameController.gameScale, 0.2f);
+			position += positions[i];
+			Gizmos.DrawLine(
+				(Vector2)transform.position + (position - positions[i]) * GameController.gameScale,
+				(Vector2)transform.position + position * GameController.gameScale);
+			Gizmos.DrawWireSphere((Vector2)transform.position + position * GameController.gameScale, 0.2f);
 		}
 	}
 }

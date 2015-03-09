@@ -109,25 +109,25 @@ public class GenericAnimationControllerEvent : MonoBehaviour {
 	public string[] newNames;
 	public Vector2[] newPositions;
 
-	private bool readyToDie;
+	private bool sentAnimation;
+
+	void Start () {
+		gameObject.name = gameObject.name + "-genericAnimationController";
+	}
 
 	public void OnEvent () {
-		if (readyToDie) {
-			CallNextEvents();
-			readyToDie = false;
-			return;
-		}
-
 		targetGenericAnimationEvent.names = newNames;
 		targetGenericAnimationEvent.positions = newPositions;
 
-		GameObject[] XnextEvents = targetGenericAnimationEvent.nextEvents;
-		targetGenericAnimationEvent.nextEvents = new GameObject[XnextEvents.Length + 1];
-		System.Array.Copy(XnextEvents, targetGenericAnimationEvent.nextEvents, XnextEvents.Length);
-		targetGenericAnimationEvent.nextEvents[XnextEvents.Length] = gameObject;
-
 		targetGenericAnimationEvent.OnEvent();
-		readyToDie = true;
+		sentAnimation = true;
+	}
+
+	void Update () {
+		if (sentAnimation && !targetGenericAnimationEvent.isPlaying) {
+			CallNextEvents();
+			sentAnimation = false;
+		}
 	}
 
 	public void OnDrawGizmosSelected () {
@@ -144,8 +144,10 @@ public class GenericAnimationControllerEvent : MonoBehaviour {
 		}
 		
 		Gizmos.color = Color.red;
+		Vector2 position = Vector2.zero;
 		for (int i=0; i<newPositions.Length; i++) {
-			Gizmos.DrawWireSphere((Vector2)transform.position + newPositions[i] * GameController.gameScale, 0.2f);
+			position += newPositions[i];
+			Gizmos.DrawWireSphere((Vector2)transform.position + position * GameController.gameScale, 0.2f);
 		}
 	}
 }

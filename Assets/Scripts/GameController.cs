@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour {
 	public static StateController stateController = null;
 
 	public const float gameScale = 2.0f;
+	public static Vector2 playerPhase = Vector2.up * gameScale;
 
 	public Canvas canvas;
 
@@ -86,7 +87,7 @@ public class GameController : MonoBehaviour {
 		}
 		sceneControllers[sceneIndex] = scene.GetComponent<SceneController>();
 
-		CloseScenes();
+		CloseScene(sceneIndex);
 	}
 
 	public void CloseScenes () {
@@ -97,6 +98,12 @@ public class GameController : MonoBehaviour {
 		for (int i=0; i<scenes.Length; i++) {
 			scenes[i].SetActive(false);
 		}
+	}
+
+	public void CloseScene (int sceneIndex) {
+		cameraController.LockCameraPosition(cameraController.transform.position);
+
+		scenes[sceneIndex].SetActive(false);
 	}
 
 	public void OpenScene (int newSceneIndex, Vector2 startPosition) {

@@ -1,21 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GenericEvent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameController.cs">
     <Files>
-      <File FileName="Assets/Scripts/GenericEvent.cs" Line="95" Column="15" />
-      <File FileName="Assets/Scripts/AnimationEvent.cs" Line="89" Column="47" />
-      <File FileName="Assets/Scripts/CharacterEvent.cs" Line="89" Column="47" />
-      <File FileName="Assets/Scripts/DeleteEvent.cs" Line="89" Column="47" />
-      <File FileName="Assets/Scripts/EnumerationEvent.cs" Line="89" Column="47" />
-      <File FileName="Assets/Scripts/FrameEvent.cs" Line="89" Column="47" />
-      <File FileName="Assets/Scripts/GenericAnimationControllerEvent.cs" Line="89" Column="47" />
-      <File FileName="Assets/Scripts/GenericAnimationEvent.cs" Line="90" Column="47" />
-      <File FileName="Assets/Scripts/GenericSpriteEvent.cs" Line="90" Column="47" />
-      <File FileName="Assets/Scripts/HeroAnimationEvent.cs" Line="89" Column="47" />
-      <File FileName="Assets/Scripts/MessageEvent.cs" Line="91" Column="18" />
-      <File FileName="Assets/Scripts/StateEvent.cs" Line="89" Column="47" />
-      <File FileName="Assets/Scripts/TeleportEvent.cs" Line="89" Column="47" />
-      <File FileName="Assets/Scripts/EventActivator.cs" Line="27" Column="1" />
+      <File FileName="Assets/Scripts/SceneController.cs" Line="25" Column="42" />
+      <File FileName="Assets/Scripts/GameController.cs" Line="106" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

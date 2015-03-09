@@ -117,7 +117,8 @@ public class GenericAnimationEvent : MonoBehaviour {
 	public string[] names;
 	public Vector2[] positions;
 
-	private bool isPlaying;
+	[HideInInspector]
+	public bool isPlaying;
 
 	private GameController gameController;
 	private Animator animator;
@@ -254,8 +255,10 @@ public class GenericAnimationEvent : MonoBehaviour {
 		}
 		
 		Gizmos.color = Color.red;
+		Vector2 position = Vector2.zero;
 		for (int i=0; i<positions.Length; i++) {
-			Gizmos.DrawWireSphere((Vector2)transform.position + positions[i] * GameController.gameScale, 0.2f);
+			position += positions[i];
+			Gizmos.DrawWireSphere((Vector2)transform.position + position * GameController.gameScale, 0.2f);
 		}
 	}
 }
