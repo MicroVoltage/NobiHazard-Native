@@ -50,14 +50,17 @@
      <Compile Include="Assets\Scripts\AnimationEditor.cs" />
      <Compile Include="Assets\Scripts\AnimationEvent.cs" />
      <Compile Include="Assets\Scripts\AnimatorManager.cs" />
+     <Compile Include="Assets\Scripts\ArriveEventActivator.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\CharacterEvent.cs" />
      <Compile Include="Assets\Scripts\CharacterManager.cs" />
+     <Compile Include="Assets\Scripts\DeleteEvent.cs" />
      <Compile Include="Assets\Scripts\EnumerationEvent.cs" />
      <Compile Include="Assets\Scripts\EventActivator.cs" />
      <Compile Include="Assets\Scripts\FrameController.cs" />
      <Compile Include="Assets\Scripts\FrameEvent.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\GenericAnimationControllerEvent.cs" />
      <Compile Include="Assets\Scripts\GenericAnimationEvent.cs" />
      <Compile Include="Assets\Scripts\GenericEvent.cs" />
      <Compile Include="Assets\Scripts\GenericSpriteEvent.cs" />

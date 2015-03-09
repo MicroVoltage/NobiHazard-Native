@@ -4,6 +4,7 @@ using System.Collections;
 public class StateEvent : MonoBehaviour {
 	public bool autoStart;
 	public bool approachStart;
+	public bool arriveStart;
 	public bool examStart;
 	
 	public enum Comparation {Equal, Less, More};
@@ -11,6 +12,7 @@ public class StateEvent : MonoBehaviour {
 	public Comparation[] requiredIntComparations;
 	public int[] requiredInts;
 	public string[] requiredIntBoolNames;
+	public string[] requiredInversedIntBoolNames;
 	
 	public GameObject[] nextEvents;
 	
@@ -25,6 +27,15 @@ public class StateEvent : MonoBehaviour {
 	
 	public void OnApproach () {
 		if (approachStart) {
+			if (!MeetRequirements()) {
+				return;
+			}
+			OnEvent();
+		}
+	}
+	
+	public void OnArrive () {
+		if (arriveStart) {
 			if (!MeetRequirements()) {
 				return;
 			}
@@ -75,6 +86,12 @@ public class StateEvent : MonoBehaviour {
 			}
 		}
 		
+		for (int i=0; i<requiredInversedIntBoolNames.Length; i++) {
+			if (GameController.stateController.GetIntBool(requiredInversedIntBoolNames[i])) {
+				return false;
+			}
+		}
+		
 		return true;
 	}
 	
@@ -94,6 +111,8 @@ public class StateEvent : MonoBehaviour {
 	private StateController stateController;
 
 	void Start () {
+		gameObject.name = gameObject.name + "-state";
+
 		stateController = GameController.stateController;
 	}
 

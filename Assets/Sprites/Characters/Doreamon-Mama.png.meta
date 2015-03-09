@@ -1,7 +1,180 @@
 fileFormatVersion: 2
 guid: 009b1d36e63844c4ab54e86aac0362a6
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Doreamon-Mama_0
+    21300002: Doreamon-Mama_1
+    21300004: Doreamon-Mama_2
+    21300006: Doreamon-Mama_3
+    21300008: Doreamon-Mama_4
+    21300010: Doreamon-Mama_5
+    21300012: Doreamon-Mama_6
+    21300014: Doreamon-Mama_7
+    21300016: Doreamon-Mama_8
+    21300018: Doreamon-Mama_9
+    21300020: Doreamon-Mama_10
+    21300022: Doreamon-Mama_11
+    21300024: Doreamon-Mama_12
+    21300026: Doreamon-Mama_13
+    21300028: Doreamon-Mama_14
+    21300030: Doreamon-Mama_15
+    21300032: Doreamon-Mama_16
+    21300034: Doreamon-Mama_17
+    21300036: Doreamon-Mama_18
+    21300038: Doreamon-Mama_19
+    21300040: Doreamon-Mama_20
+    21300042: Doreamon-Mama_21
+    21300044: Doreamon-Mama_22
+    21300046: Doreamon-Mama_23
+    21300048: Doreamon-Mama_24
+    21300050: Doreamon-Mama_25
+    21300052: Doreamon-Mama_26
+    21300054: Doreamon-Mama_27
+    21300056: Doreamon-Mama_28
+    21300058: Doreamon-Mama_29
+    21300060: Doreamon-Mama_30
+    21300062: Doreamon-Mama_31
+    21300064: Doreamon-Mama_32
+    21300066: Doreamon-Mama_33
+    21300068: Doreamon-Mama_34
+    21300070: Doreamon-Mama_35
+    21300072: Doreamon-Mama_36
+    21300074: Doreamon-Mama_37
+    21300076: Doreamon-Mama_38
+    21300078: Doreamon-Mama_39
+    21300080: Doreamon-Mama_40
+    21300082: Doreamon-Mama_41
+    21300084: Doreamon-Mama_42
+    21300086: Doreamon-Mama_43
+    21300088: Doreamon-Mama_44
+    21300090: Doreamon-Mama_45
+    21300092: Doreamon-Mama_46
+    21300094: Doreamon-Mama_47
+    21300096: Doreamon-Mama_48
+    21300098: Doreamon-Mama_49
+    21300100: Doreamon-Mama_50
+    21300102: Doreamon-Mama_51
+    21300104: Doreamon-Mama_52
+    21300106: Doreamon-Mama_53
+    21300108: Doreamon-Mama_54
+    21300110: Doreamon-Mama_55
+    21300112: Doreamon-Mama_56
+    21300114: Doreamon-Mama_57
+    21300116: Doreamon-Mama_58
+    21300118: Doreamon-Mama_59
+    21300120: Doreamon-Mama_60
+    21300122: Doreamon-Mama_61
+    21300124: Doreamon-Mama_62
+    21300126: Doreamon-Mama_63
+    21300128: Doreamon-Mama_64
+    21300130: Doreamon-Mama_65
+    21300132: Doreamon-Mama_66
+    21300134: Doreamon-Mama_67
+    21300136: Doreamon-Mama_68
+    21300138: Doreamon-Mama_69
+    21300140: Doreamon-Mama_70
+    21300142: Doreamon-Mama_71
+    21300144: Doreamon-Mama_72
+    21300146: Doreamon-Mama_73
+    21300148: Doreamon-Mama_74
+    21300150: Doreamon-Mama_75
+    21300152: Doreamon-Mama_76
+    21300154: Doreamon-Mama_77
+    21300156: Doreamon-Mama_78
+    21300158: Doreamon-Mama_79
+    21300160: Doreamon-Mama_80
+    21300162: Doreamon-Mama_81
+    21300164: Doreamon-Mama_82
+    21300166: Doreamon-Mama_83
+    21300168: Doreamon-Mama_84
+    21300170: Doreamon-Mama_85
+    21300172: Doreamon-Mama_86
+    21300174: Doreamon-Mama_87
+    21300176: Doreamon-Mama_88
+    21300178: Doreamon-Mama_89
+    21300180: Doreamon-Mama_90
+    21300182: Doreamon-Mama_91
+    21300184: Doreamon-Mama_92
+    21300186: Doreamon-Mama_93
+    21300188: Doreamon-Mama_94
+    21300190: Doreamon-Mama_95
+    21300192: Doreamon-Mama_96
+    21300194: Doreamon-Mama_97
+    21300196: Doreamon-Mama_98
+    21300198: Doreamon-Mama_99
+    21300200: Doreamon-Mama_100
+    21300202: Doreamon-Mama_101
+    21300204: Doreamon-Mama_102
+    21300206: Doreamon-Mama_103
+    21300208: Doreamon-Mama_104
+    21300210: Doreamon-Mama_105
+    21300212: Doreamon-Mama_106
+    21300214: Doreamon-Mama_107
+    21300216: Doreamon-Mama_108
+    21300218: Doreamon-Mama_109
+    21300220: Doreamon-Mama_110
+    21300222: Doreamon-Mama_111
+    21300224: Doreamon-Mama_112
+    21300226: Doreamon-Mama_113
+    21300228: Doreamon-Mama_114
+    21300230: Doreamon-Mama_115
+    21300232: Doreamon-Mama_116
+    21300234: Doreamon-Mama_117
+    21300236: Doreamon-Mama_118
+    21300238: Doreamon-Mama_119
+    21300240: Doreamon-Mama_120
+    21300242: Doreamon-Mama_121
+    21300244: Doreamon-Mama_122
+    21300246: Doreamon-Mama_123
+    21300248: Doreamon-Mama_124
+    21300250: Doreamon-Mama_125
+    21300252: Doreamon-Mama_126
+    21300254: Doreamon-Mama_127
+    21300256: Doreamon-Mama_128
+    21300258: Doreamon-Mama_129
+    21300260: Doreamon-Mama_130
+    21300262: Doreamon-Mama_131
+    21300264: Doreamon-Mama_132
+    21300266: Doreamon-Mama_133
+    21300268: Doreamon-Mama_134
+    21300270: Doreamon-Mama_135
+    21300272: Doreamon-Mama_136
+    21300274: Doreamon-Mama_137
+    21300276: Doreamon-Mama_138
+    21300278: Doreamon-Mama_139
+    21300280: Doreamon-Mama_140
+    21300282: Doreamon-Mama_141
+    21300284: Doreamon-Mama_142
+    21300286: Doreamon-Mama_143
+    21300288: Doreamon-Mama_144
+    21300290: Doreamon-Mama_145
+    21300292: Doreamon-Mama_146
+    21300294: Doreamon-Mama_147
+    21300296: Doreamon-Mama_148
+    21300298: Doreamon-Mama_149
+    21300300: Doreamon-Mama_150
+    21300302: Doreamon-Mama_151
+    21300304: Doreamon-Mama_152
+    21300306: Doreamon-Mama_153
+    21300308: Doreamon-Mama_154
+    21300310: Doreamon-Mama_155
+    21300312: Doreamon-Mama_156
+    21300314: Doreamon-Mama_157
+    21300316: Doreamon-Mama_158
+    21300318: Doreamon-Mama_160
+    21300320: Doreamon-Mama_161
+    21300322: Doreamon-Mama_162
+    21300324: Doreamon-Mama_163
+    21300326: Doreamon-Mama_164
+    21300328: Doreamon-Mama_165
+    21300330: Doreamon-Mama_166
+    21300332: Doreamon-Mama_167
+    21300334: Doreamon-Mama_168
+    21300336: Doreamon-Mama_169
+    21300338: Doreamon-Mama_170
+    21300340: Doreamon-Mama_171
+    21300342: Doreamon-Mama_172
+    21300344: Doreamon-Mama_173
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -17,7 +190,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: .25
     normalMapFilter: 0
-  isReadable: 0
+  isReadable: 1
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
@@ -42,6 +215,1736 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Doreamon-Mama_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 480
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 480
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 480
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 480
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 480
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 480
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 480
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 480
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_9
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 480
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_10
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 480
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_11
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 480
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_13
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 448
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_14
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 448
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_15
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 448
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 448
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_17
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 448
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_18
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 448
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_19
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 448
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_21
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 448
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_22
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 448
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_23
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 448
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_25
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 416
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_26
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 416
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_27
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 416
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_28
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 416
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_29
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 416
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_30
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 416
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_31
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 416
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_32
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 416
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_33
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 416
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_34
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 416
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_35
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 416
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_37
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_38
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_39
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_40
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_41
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_42
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_43
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_44
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_45
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_46
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_47
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 384
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 352
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_49
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 352
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_50
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 352
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_51
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 352
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_52
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 352
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_53
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 352
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_54
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 352
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_55
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 352
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_56
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 352
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_57
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 352
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_58
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 352
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_59
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 352
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_61
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 320
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_62
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 320
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_63
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 320
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_64
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 320
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_65
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 320
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_66
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 320
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_67
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 320
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_68
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_69
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 320
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_70
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 320
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_71
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 320
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_73
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 288
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_74
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 288
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_75
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 288
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_76
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_77
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 288
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_78
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 288
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_79
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 288
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_80
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_81
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 288
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_82
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 288
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_83
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 288
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_85
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_86
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_87
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_88
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_89
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_90
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_91
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_92
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_93
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_94
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_95
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 256
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_97
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 224
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_98
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 224
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_99
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 224
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_100
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_101
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 224
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_102
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 224
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_103
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 224
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_104
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_105
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 224
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_106
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 224
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_107
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 224
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_109
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 192
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_110
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 192
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_111
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 192
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_112
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_113
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 192
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_114
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_115
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 192
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_116
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_117
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 192
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_118
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 192
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_119
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 192
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_121
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 160
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_122
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 160
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_123
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 160
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_124
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_125
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 160
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_126
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 160
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_127
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 160
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_128
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_129
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 160
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_130
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 160
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_131
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 160
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_132
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_133
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_134
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_135
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_136
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_137
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_138
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_139
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_140
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_141
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_142
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_143
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 128
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_145
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 96
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_146
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_147
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_148
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 96
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_149
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_150
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_151
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 64
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_152
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_153
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 64
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_154
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_155
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 64
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_156
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_157
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 64
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_158
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_160
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_161
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 32
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_162
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_163
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_164
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_165
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 32
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_166
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_167
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_168
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_169
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_170
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_171
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_172
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Doreamon-Mama_173
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

@@ -32,8 +32,10 @@ public class FrameController : MonoBehaviour {
 		frame.sprite = frames[GetFrameIndex(frameName)];
 		if (backgroundName == "") {
 			background.sprite = null;
+			background.color = Color.black;
 		} else {
 			background.sprite = frames[GetFrameIndex(backgroundName)];
+			background.color = Color.white;
 		}
 		
 		frameContainer.SetActive(true);

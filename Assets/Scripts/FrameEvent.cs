@@ -4,6 +4,7 @@ using System.Collections;
 public class FrameEvent : MonoBehaviour {
 	public bool autoStart;
 	public bool approachStart;
+	public bool arriveStart;
 	public bool examStart;
 	
 	public enum Comparation {Equal, Less, More};
@@ -11,6 +12,7 @@ public class FrameEvent : MonoBehaviour {
 	public Comparation[] requiredIntComparations;
 	public int[] requiredInts;
 	public string[] requiredIntBoolNames;
+	public string[] requiredInversedIntBoolNames;
 	
 	public GameObject[] nextEvents;
 	
@@ -25,6 +27,15 @@ public class FrameEvent : MonoBehaviour {
 	
 	public void OnApproach () {
 		if (approachStart) {
+			if (!MeetRequirements()) {
+				return;
+			}
+			OnEvent();
+		}
+	}
+	
+	public void OnArrive () {
+		if (arriveStart) {
 			if (!MeetRequirements()) {
 				return;
 			}
@@ -75,6 +86,12 @@ public class FrameEvent : MonoBehaviour {
 			}
 		}
 		
+		for (int i=0; i<requiredInversedIntBoolNames.Length; i++) {
+			if (GameController.stateController.GetIntBool(requiredInversedIntBoolNames[i])) {
+				return false;
+			}
+		}
+		
 		return true;
 	}
 	
@@ -87,9 +104,10 @@ public class FrameEvent : MonoBehaviour {
 	/******************************* Event Alike *******************************/
 
 
-	public bool hasBackground;
+	public bool endFrameSequence;
+	
 	public string[] frameNames;
-	public string[] backgroundNames;
+	public string backgroundName;
 	public float[] frameTimes;
 
 	private FrameController frameController;
@@ -109,25 +127,13 @@ public class FrameEvent : MonoBehaviour {
 				frameNames[i] = frameNames[i-1];
 			}
 		}
-
-		if (hasBackground) {
-			for (int i=0; i<backgroundNames.Length; i++) {
-				backgroundNames[i] = "";
-			}
-		} else {
-			for (int i=0; i<backgroundNames.Length; i++) {
-				if (backgroundNames[i] == "") {
-					backgroundNames[i] = backgroundNames[i-1];
-				}
-			}
-		}
 	}
 
 	void OnEvent () {
 		Debug.Log(gameObject.name + " - get frame event");
 
 		showingFrame = true;
-		frameController.ShowFrame(frameNames[0], backgroundNames[0]);
+		frameController.ShowFrame(frameNames[0], backgroundName);
 		lastFrameTime = Time.time;
 	}
 
@@ -137,11 +143,13 @@ public class FrameEvent : MonoBehaviour {
 		}
 
 		if (frameIndex < frameNames.Length) {
-			frameController.ShowFrame(frameNames[frameIndex], backgroundNames[frameIndex]);
+			frameController.ShowFrame(frameNames[frameIndex], backgroundName);
 			lastFrameTime = Time.time;
 			frameIndex++;
 		} else {
-			frameController.HideFrame();
+			if (endFrameSequence) {
+				frameController.HideFrame();
+			}
 			showingFrame = false;
 			frameIndex = 1;
 			

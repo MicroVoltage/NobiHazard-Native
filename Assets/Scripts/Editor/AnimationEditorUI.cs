@@ -37,6 +37,9 @@ public class AnimationEditorUI : Editor {
 		}
 		if (GUILayout.Button("Save Animations", GUILayout.Height(50))) {
 			for (int i=0; i<animationEditor.animationClips.Length; i++) {
+				if (!animationEditor.animationClips[i]) {
+					break;
+				}
 				AssetDatabase.CreateAsset(
 					animationEditor.animationClips[i],
 					"Assets/Animations/" + animationEditor.animationClips[i].name + ".anim");

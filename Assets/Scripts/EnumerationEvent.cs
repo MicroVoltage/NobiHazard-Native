@@ -4,6 +4,7 @@ using System.Collections;
 public class EnumerationEvent : MonoBehaviour {
 	public bool autoStart;
 	public bool approachStart;
+	public bool arriveStart;
 	public bool examStart;
 	
 	public enum Comparation {Equal, Less, More};
@@ -11,6 +12,7 @@ public class EnumerationEvent : MonoBehaviour {
 	public Comparation[] requiredIntComparations;
 	public int[] requiredInts;
 	public string[] requiredIntBoolNames;
+	public string[] requiredInversedIntBoolNames;
 	
 	public GameObject[] nextEvents;
 	
@@ -25,6 +27,15 @@ public class EnumerationEvent : MonoBehaviour {
 	
 	public void OnApproach () {
 		if (approachStart) {
+			if (!MeetRequirements()) {
+				return;
+			}
+			OnEvent();
+		}
+	}
+	
+	public void OnArrive () {
+		if (arriveStart) {
 			if (!MeetRequirements()) {
 				return;
 			}
@@ -75,6 +86,12 @@ public class EnumerationEvent : MonoBehaviour {
 			}
 		}
 		
+		for (int i=0; i<requiredInversedIntBoolNames.Length; i++) {
+			if (GameController.stateController.GetIntBool(requiredInversedIntBoolNames[i])) {
+				return false;
+			}
+		}
+		
 		return true;
 	}
 	
@@ -86,12 +103,16 @@ public class EnumerationEvent : MonoBehaviour {
 	
 	/******************************* Event Alike *******************************/
 
-
+	
 	public GameObject[] events;
 	public bool[] sameTime;
 
 	public int eventIndex;
-	
+
+	void Start () {
+		gameObject.name = gameObject.name + "-enumeration";
+	}
+
 	public void OnEvent () {
 		if (eventIndex >= events.Length) {
 			eventIndex = 0;

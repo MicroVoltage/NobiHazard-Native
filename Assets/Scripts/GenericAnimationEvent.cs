@@ -5,6 +5,7 @@ using System.Collections;
 public class GenericAnimationEvent : MonoBehaviour {
 	public bool autoStart;
 	public bool approachStart;
+	public bool arriveStart;
 	public bool examStart;
 	
 	public enum Comparation {Equal, Less, More};
@@ -12,6 +13,7 @@ public class GenericAnimationEvent : MonoBehaviour {
 	public Comparation[] requiredIntComparations;
 	public int[] requiredInts;
 	public string[] requiredIntBoolNames;
+	public string[] requiredInversedIntBoolNames;
 	
 	public GameObject[] nextEvents;
 	
@@ -26,6 +28,15 @@ public class GenericAnimationEvent : MonoBehaviour {
 	
 	public void OnApproach () {
 		if (approachStart) {
+			if (!MeetRequirements()) {
+				return;
+			}
+			OnEvent();
+		}
+	}
+	
+	public void OnArrive () {
+		if (arriveStart) {
 			if (!MeetRequirements()) {
 				return;
 			}
@@ -76,6 +87,12 @@ public class GenericAnimationEvent : MonoBehaviour {
 			}
 		}
 		
+		for (int i=0; i<requiredInversedIntBoolNames.Length; i++) {
+			if (GameController.stateController.GetIntBool(requiredInversedIntBoolNames[i])) {
+				return false;
+			}
+		}
+		
 		return true;
 	}
 	
@@ -86,6 +103,7 @@ public class GenericAnimationEvent : MonoBehaviour {
 	}
 	
 	/******************************* Event Alike *******************************/
+
 
 	private bool startAnimationSequence = true;
 	public bool endAnimationSequence;
@@ -163,7 +181,7 @@ public class GenericAnimationEvent : MonoBehaviour {
 		transform.position = Vector3.MoveTowards(transform.position, wantedPosition, Time.deltaTime * speed);
 	}
 
-	void OnEvent () {
+	public void OnEvent () {
 		Debug.Log(gameObject.name + " - get generic animation event");
 		if (startAnimationSequence) {
 			Debug.Log(gameObject.name + " - start generic animation sequence");
@@ -219,6 +237,25 @@ public class GenericAnimationEvent : MonoBehaviour {
 		AnimatorStateInfo animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
 		if (!animatorStateInfo.IsName(animationName)) {
 			animator.Play(animationName, 0);
+		}
+	}
+
+	public void OnDrawGizmosSelected () {
+		Gizmos.color = Color.gray;
+		for (int x=-8; x<8; x++) {
+			Gizmos.DrawRay(
+				transform.position + new Vector3(x * GameController.gameScale, -8, 0),
+				Vector3.up * 8 * GameController.gameScale);
+		}
+		for (int y=-8; y<8; y++) {
+			Gizmos.DrawRay(
+				transform.position + new Vector3(-8, y * GameController.gameScale, 0),
+				Vector3.right * 8 * GameController.gameScale);
+		}
+		
+		Gizmos.color = Color.red;
+		for (int i=0; i<positions.Length; i++) {
+			Gizmos.DrawWireSphere((Vector2)transform.position + positions[i] * GameController.gameScale, 0.2f);
 		}
 	}
 }

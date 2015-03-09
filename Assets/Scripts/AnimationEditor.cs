@@ -9,9 +9,9 @@ public class AnimationEditor : MonoBehaviour {
 	// Frame rate
 	public int frameRate = 8;
 	// Name for each animation null -> no animation
-	public string[] animationNames = new string[4 * 16];
+	public string[] animationNames;
 	// Is one frame? false -> four frames
-	public bool[] isOneFrame = new bool[4 * 16];
+	public bool[] isOneFrame;
 
 	public string autoName;
 	public string[] autoOrientation = new string[4];

@@ -5,6 +5,7 @@ using System.Collections;
 public class GenericSpriteEvent : MonoBehaviour {
 	public bool autoStart;
 	public bool approachStart;
+	public bool arriveStart;
 	public bool examStart;
 	
 	public enum Comparation {Equal, Less, More};
@@ -12,6 +13,7 @@ public class GenericSpriteEvent : MonoBehaviour {
 	public Comparation[] requiredIntComparations;
 	public int[] requiredInts;
 	public string[] requiredIntBoolNames;
+	public string[] requiredInversedIntBoolNames;
 	
 	public GameObject[] nextEvents;
 	
@@ -26,6 +28,15 @@ public class GenericSpriteEvent : MonoBehaviour {
 	
 	public void OnApproach () {
 		if (approachStart) {
+			if (!MeetRequirements()) {
+				return;
+			}
+			OnEvent();
+		}
+	}
+	
+	public void OnArrive () {
+		if (arriveStart) {
 			if (!MeetRequirements()) {
 				return;
 			}
@@ -76,6 +87,12 @@ public class GenericSpriteEvent : MonoBehaviour {
 			}
 		}
 		
+		for (int i=0; i<requiredInversedIntBoolNames.Length; i++) {
+			if (GameController.stateController.GetIntBool(requiredInversedIntBoolNames[i])) {
+				return false;
+			}
+		}
+		
 		return true;
 	}
 	
@@ -93,11 +110,12 @@ public class GenericSpriteEvent : MonoBehaviour {
 	public bool deleteParent;
 	public bool deleteSelf;
 
-	private SpriteRenderer spriteRenderer;
+	//private SpriteRenderer spriteRenderer;
 	private bool readyToDie;
 
 	void Start () {
-		spriteRenderer = GetComponent<SpriteRenderer>();
+		gameObject.name = gameObject.name + "-genericSprite";
+		//spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 
 	public void OnEvent () {
@@ -112,7 +130,7 @@ public class GenericSpriteEvent : MonoBehaviour {
 			Destroy(gameObject);
 		}
 
-		spriteRenderer.sprite = sprite;
+		GetComponent<SpriteRenderer>().sprite = sprite;
 		readyToDie = true;
 		CallNextEvents();
 	}
