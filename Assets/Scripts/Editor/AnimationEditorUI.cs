@@ -59,7 +59,7 @@ public class AnimationEditorUI : Editor {
 
 				EditorGUILayout.BeginHorizontal();
 
-				animationEditor.animationNames[i] = GUILayout.TextField(animationEditor.animationNames[i], GUILayout.MinWidth(100));
+				animationEditor.animationNames[i] = EditorGUILayout.TextField(animationEditor.animationNames[i], GUILayout.MinWidth(100));
 				
 				animationEditor.isOneFrame[i] = GUILayout.Toggle(
 					animationEditor.isOneFrame[i],

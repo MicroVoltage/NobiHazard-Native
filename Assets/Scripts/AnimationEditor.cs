@@ -43,8 +43,8 @@ public class AnimationEditor : MonoBehaviour {
 			return;
 		}
 
-		for (int i=0; i<sortedFrames.Length/3; i++) {
-			if (animationNames[i * 4] != "" && autoName[0] != animationNames[i * 4][0]){
+		for (int i=0; i<animationNames.Length/4; i++) {
+			if (animationNames[i * 4] != "" && autoName[0] != animationNames[i * 4][0]) {
 				string gName = animationNames[i * 4];
 				for (int j=0; j<4; j++) {
 					animationNames[i * 4 + j] = autoName + "-" + gName + "-" + autoOrientation[j];
@@ -129,10 +129,10 @@ public class AnimationEditor : MonoBehaviour {
 	}
 
 	void SortFrames () {
-		sortedFrames = new Sprite[frames.Length];
-		animationNames = new string[frames.Length * 4];
-		isOneFrame = new bool[animationNames.Length];
-		frameTextures = new Texture2D[frames.Length];
+		sortedFrames = new Sprite[frames.Length * 3];
+		animationNames = new string[sortedFrames.Length];
+		isOneFrame = new bool[sortedFrames.Length];
+		frameTextures = new Texture2D[sortedFrames.Length];
 
 		int g = 0;
 		for (int i=0; i<4; i++) {
