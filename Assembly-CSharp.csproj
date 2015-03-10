@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\HealthController.cs" />
      <Compile Include="Assets\Scripts\HeroAnimationEvent.cs" />
      <Compile Include="Assets\Scripts\InputController.cs" />
+     <Compile Include="Assets\Scripts\InventoryCheckEvent.cs" />
      <Compile Include="Assets\Scripts\InventoryController.cs" />
      <Compile Include="Assets\Scripts\InventoryEvent.cs" />
      <Compile Include="Assets\Scripts\MessageController.cs" />

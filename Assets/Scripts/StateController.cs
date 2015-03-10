@@ -74,7 +74,7 @@ public class StateController : MonoBehaviour {
 	*/
 
 	public int GetIntIndex (string intName) {
-		for (int i=0; i<intName.Length; i++) {
+		for (int i=0; i<stateIntNames.Length; i++) {
 			if (stateIntNames[i] == intName) {
 				return i;
 			}

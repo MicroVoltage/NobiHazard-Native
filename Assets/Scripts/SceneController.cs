@@ -23,6 +23,10 @@ public class SceneController : MonoBehaviour {
 		background = transform.FindChild("background");
 		foreground = transform.FindChild("foreground");
 		eventLayer = transform.FindChild("event");
+
+		for (int i=0; i<eventLayer.childCount; i++) {
+			eventLayer.GetChild(i).tag = "Event";
+		}
 	}
 
 	void Update () {
