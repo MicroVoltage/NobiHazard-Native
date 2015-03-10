@@ -4,21 +4,24 @@ using System.Collections;
 [RequireComponent(typeof(AnimatorManager), typeof(WeaponController))]
 public class PlayerController : MonoBehaviour {
 	public float walkForce = 300.0f;
+	public float fireTime = 0.2f;
+	public float recoilTime = 0.2f;
 
-	public int weaponIndex = 0;
-	public bool weaponDrawn = false;
+	public int weaponIndex;
+	public bool weaponDrawn;
 
-	public bool isMoving = false;
-	public bool isFiring = false;
-	public bool isDead = false;
+	public bool isMoving;
+	/* 0 idle, 1 fire, 2 recoil */
+	public int fireState;
+	public bool isDead;
 
-	private GameController gameController;
-	private InputController inputController;
-	private AnimatorManager animatorManager;
-	private InventoryController inventory;
-	private WeaponController weaponController;
+	GameController gameController;
+	InputController inputController;
+	AnimatorManager animatorManager;
+	InventoryController inventory;
+	WeaponController weaponController;
 
-	private int gameState;
+	int gameState;
 
 
 	void Start () {
@@ -29,7 +32,7 @@ public class PlayerController : MonoBehaviour {
 		weaponController = GetComponent<WeaponController>();
 	}
 
-	void Update () {
+	void FixedUpdate () {
 		if (isDead) {
 			return;
 		}
@@ -44,10 +47,12 @@ public class PlayerController : MonoBehaviour {
 	void RefreshPlayerState () {
 		if (inputController.shift) {
 			weaponDrawn = !weaponDrawn;
+			if (weaponDrawn) {
+				weaponDrawn = weaponController.HasWeapon(weaponIndex);
+			}
 		}
 
 		isMoving = false;
-		isFiring = false;
 		switch (gameState) {
 		case GameController.stateSearch:
 			if (weaponDrawn) {
@@ -69,7 +74,7 @@ public class PlayerController : MonoBehaviour {
 
 			if (inputController.fire) {
 				if (weaponController.Fire(weaponIndex) == 0) {
-					isFiring = true;
+					fireState = 1;
 				}
 			}
 			break;
@@ -81,6 +86,18 @@ public class PlayerController : MonoBehaviour {
 			break;
 		}
 
+		switch (fireState) {
+		case 1:
+			if (Time.time > weaponController.lastFireTime + fireTime) {
+				fireState = 2;
+			}
+			break;
+		case 2:
+			if (Time.time > weaponController.lastFireTime + fireTime + recoilTime) {
+				fireState = 0;
+			}
+			break;
+		}
 
 		if (!inventory.HasHealth()) {
 			isDead = true;
@@ -104,14 +121,22 @@ public class PlayerController : MonoBehaviour {
 
 			break;
 		case GameController.stateFight:
-			if (inputController.fire) {
-				animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, AnimatorManager.stateFire, 0);
-			} else {
+			switch (fireState) {
+			case 0:
 				if (isMoving) {
-					animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, AnimatorManager.stateWalk, 0);
+					animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], AnimatorManager.stateWalk, 0);
 				} else {
-					animatorManager.PlayAnimation(inputController.orientationIndex, weaponIndex, AnimatorManager.stateIdle, 0);
+					animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], AnimatorManager.stateIdle, 0);
 				}
+				break;
+			case 1:
+				animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], AnimatorManager.stateFire, 0);
+
+				break;
+			case 2:
+				animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], AnimatorManager.stateFire, 1);
+
+				break;
 			}
 
 			break;

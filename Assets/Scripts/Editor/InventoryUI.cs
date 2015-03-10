@@ -11,9 +11,13 @@ public class InventoryUI : Editor {
 	}
 
 	public override void OnInspectorGUI () {
+		inventory.inventorySize = EditorGUILayout.IntField(inventory.inventorySize);
+
 		if (GUILayout.Button("Resize Inventory", GUILayout.Height(40))) {
 			inventory.ResizeInventory();
 		}
+
+		GUILayout.Label("Health " + inventory.health);
 
 		for (int i=0; i<inventory.itemNames.Length; i++) {
 			GUILayout.Label("Item " + i);

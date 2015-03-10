@@ -38,6 +38,9 @@ public class GameController : MonoBehaviour {
 	public const int stateAnimation = 4;
 	public const int stateFrame = 5;
 
+	/* To Be Deleted */
+	public int testStartLevel = 0;
+
 
 	void Awake () {
 		if (GameController.gameController == null) {
@@ -62,7 +65,8 @@ public class GameController : MonoBehaviour {
 		if (sceneIndex == -1) {
 			messageController.HideMessage();
 			frameController.HideFrame();
-			OpenScene(0, Vector2.zero);
+			OpenScene(testStartLevel, Vector2.zero);
+			characterManager.AddHero(1, scenes[testStartLevel].transform.position + Vector3.one * gameScale);
 		}
 	}
 

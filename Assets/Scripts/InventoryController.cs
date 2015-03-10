@@ -64,6 +64,9 @@ public class InventoryController : MonoBehaviour {
 	public void AddItem (int itemIndex) {
 		itemCounts[itemIndex]++;
 	}
+	public void AddItem (int itemIndex, int addNumber) {
+		itemCounts[itemIndex] += addNumber;
+	}
 	public bool SubItem (int itemIndex) {
 		itemCounts[itemIndex]--;
 		if (HasItem(itemIndex)) {
@@ -89,7 +92,7 @@ public class InventoryController : MonoBehaviour {
 	}
 	public bool SubHealth (float value) {
 		health -= value;
-		if (HasHealth()) {
+		if (!HasHealth()) {
 			health = 0;
 		}
 		return HasHealth();

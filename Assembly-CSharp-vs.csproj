@@ -62,20 +62,25 @@
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\GenericAnimationControllerEvent.cs" />
      <Compile Include="Assets\Scripts\GenericAnimationEvent.cs" />
+     <Compile Include="Assets\Scripts\GenericAnimatorManager.cs" />
      <Compile Include="Assets\Scripts\GenericEvent.cs" />
      <Compile Include="Assets\Scripts\GenericSpriteEvent.cs" />
+     <Compile Include="Assets\Scripts\HealthController.cs" />
      <Compile Include="Assets\Scripts\HeroAnimationEvent.cs" />
      <Compile Include="Assets\Scripts\InputController.cs" />
      <Compile Include="Assets\Scripts\InventoryController.cs" />
+     <Compile Include="Assets\Scripts\InventoryEvent.cs" />
      <Compile Include="Assets\Scripts\MessageController.cs" />
      <Compile Include="Assets\Scripts\MessageEvent.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SceneController.cs" />
+     <Compile Include="Assets\Scripts\SetActiveEvent.cs" />
      <Compile Include="Assets\Scripts\StateController.cs" />
      <Compile Include="Assets\Scripts\StateEvent.cs" />
      <Compile Include="Assets\Scripts\TeleportEvent.cs" />
      <Compile Include="Assets\Scripts\TileEditor.cs" />
      <Compile Include="Assets\Scripts\WeaponController.cs" />
+     <Compile Include="Assets\Scripts\Zombie\ZombieController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>

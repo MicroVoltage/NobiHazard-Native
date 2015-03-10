@@ -64,10 +64,12 @@ public class InputController : MonoBehaviour {
 		case GameController.stateFight:
 			if (!B) {
 				SetOrientation();
+			} else {
+				SetDirection();
 			}
 
 			fire = A;
-			shift = Adown;
+			shift = Sdown;
 			break;
 		case GameController.stateMenu:
 
@@ -87,9 +89,13 @@ public class InputController : MonoBehaviour {
 		}
 	}
 
-	void SetOrientation () {
+	void SetDirection () {
 		direction = new Vector2(H, V);
 		normalizedDirection = direction.normalized;
+	}
+
+	void SetOrientation () {
+		SetDirection();
 
 		Vector2 newOrientation = Vector3.zero;
 		if (direction.sqrMagnitude > 1.0f) {
