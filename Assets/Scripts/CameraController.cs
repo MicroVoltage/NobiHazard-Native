@@ -7,6 +7,8 @@ public class CameraController : MonoBehaviour {
 	public Vector2 lockedPosition;
 	public Vector2 safeRect;
 
+	public AudioClip[] musics;
+
 	private Vector3 wantedPosition;
 
 	void Awake () {
@@ -50,5 +52,16 @@ public class CameraController : MonoBehaviour {
 		isLocked = true;
 		lockedPosition = newPosition;
 		SetCameraPosition(newPosition);
+	}
+
+	public void SetMusic (string musicName) {
+		for (int i=0; i<musics.Length; i++) {
+			if (musics[i].name == musicName) {
+				audio.clip = musics[i];
+				return;
+			}
+		}
+		Debug.LogError(musicName + " - music not exist");
+		return;
 	}
 }

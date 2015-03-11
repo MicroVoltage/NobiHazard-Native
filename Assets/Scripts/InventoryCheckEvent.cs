@@ -11,8 +11,14 @@ public class InventoryCheckEvent : MonoBehaviour {
 	public string[] requiredIntNames;
 	public Comparation[] requiredIntComparations;
 	public int[] requiredInts;
+	
 	public string[] requiredIntBoolNames;
 	public string[] requiredInversedIntBoolNames;
+	
+	public string[] requiredItemNames;
+	public bool deleteRequiredItems;
+	
+	public AudioClip sound;
 	
 	public GameObject[] nextEvents;
 	
@@ -92,6 +98,17 @@ public class InventoryCheckEvent : MonoBehaviour {
 			}
 		}
 		
+		for (int i=0; i<requiredItemNames.Length; i++) {
+			if (!GameController.inventoryController.HasItem(GameController.inventoryController.GetItemIndex(requiredItemNames[i]))) {
+				return false;
+			}
+			if (deleteRequiredItems) {
+				GameController.inventoryController.SubItem(GameController.inventoryController.GetItemIndex(requiredItemNames[i]));
+			}
+		}
+		
+		AudioSource.PlayClipAtPoint(sound, transform.position);
+		
 		return true;
 	}
 	
@@ -103,7 +120,8 @@ public class InventoryCheckEvent : MonoBehaviour {
 	
 	/******************************* Event Alike *******************************/
 
-	public string[] requiredItemNames;
+
+	public string[] requiredItemmNames;
 	public bool passDeleteOne;
 
 	InventoryController inventoryController;

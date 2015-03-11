@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\InventoryEvent.cs" />
      <Compile Include="Assets\Scripts\MessageController.cs" />
      <Compile Include="Assets\Scripts\MessageEvent.cs" />
+     <Compile Include="Assets\Scripts\MusicEvent.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SceneController.cs" />
      <Compile Include="Assets\Scripts\SetActiveEvent.cs" />
