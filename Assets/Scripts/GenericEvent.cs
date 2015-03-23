@@ -4,21 +4,19 @@ using System.Collections;
 public partial class GenericEvent : MonoBehaviour {
 	public bool autoStart;
 	public bool approachStart;
-	public bool arriveStart;
 	public bool examStart;
 	
-	public enum Comparation {Equal, Less, More};
-	public string[] requiredIntNames;
-	public Comparation[] requiredIntComparations;
-	public int[] requiredInts;
+	public string[] needSwitchNames;
+	public bool[] needSwitchValues;
+
+	public string[] setSwitchNames;
+	public bool[] setSwitchValues;
+
+	public string[] needItems;
+	public bool deleteItems;
 	
-	public string[] requiredIntBoolNames;
-	public string[] requiredInversedIntBoolNames;
-	
-	public string[] requiredItemNames;
-	public bool deleteRequiredItems;
-	
-	public AudioClip sound;
+	public AudioClip enterSound;
+	public AudioClip exitSound;
 	
 	public GameObject[] nextEvents;
 	
@@ -27,7 +25,7 @@ public partial class GenericEvent : MonoBehaviour {
 			if (!MeetRequirements()) {
 				return;
 			}
-			OnEvent();
+			StartEvent();
 		}
 	}
 	
@@ -36,25 +34,16 @@ public partial class GenericEvent : MonoBehaviour {
 			if (!MeetRequirements()) {
 				return;
 			}
-			OnEvent();
+			StartEvent();
 		}
 	}
-	
-	public void OnArrive () {
-		if (arriveStart) {
-			if (!MeetRequirements()) {
-				return;
-			}
-			OnEvent();
-		}
-	}
-	
+
 	public void OnExam () {
 		if (examStart) {
 			if (!MeetRequirements()) {
 				return;
 			}
-			OnEvent();
+			StartEvent();
 		}
 	}
 	
@@ -62,67 +51,55 @@ public partial class GenericEvent : MonoBehaviour {
 		if (!MeetRequirements()) {
 			return;
 		}
-		OnEvent();
+		StartEvent();
 	}
 	
-	public bool MeetRequirements () {
-		for (int i=0; i<requiredIntNames.Length; i++) {
-			switch (requiredIntComparations[i]) {
-			case Comparation.Equal:
-				if (!(GameController.stateController.GetInt(requiredIntNames[i]) == requiredInts[i])) {
-					return false;
-				}
-				break;
-			case Comparation.Less:
-				if (!(GameController.stateController.GetInt(requiredIntNames[i]) < requiredInts[i])) {
-					return false;
-				}
-				break;
-			case Comparation.More:
-				if (!(GameController.stateController.GetInt(requiredIntNames[i]) > requiredInts[i])) {
-					return false;
-				}
-				break;
-			}
-		}
-		
-		for (int i=0; i<requiredIntBoolNames.Length; i++) {
-			if (!GameController.stateController.GetIntBool(requiredIntBoolNames[i])) {
+	bool MeetRequirements () {
+		for (int i=0; i<needSwitchNames.Length; i++) {
+			if (GameController.stateController.GetSwitch(needSwitchNames[i]) != needSwitchValues[i]) {
 				return false;
 			}
 		}
 		
-		for (int i=0; i<requiredInversedIntBoolNames.Length; i++) {
-			if (GameController.stateController.GetIntBool(requiredInversedIntBoolNames[i])) {
+		for (int i=0; i<needItems.Length; i++) {
+			if (!GameController.inventoryController.HasItem(GameController.inventoryController.GetItemIndex(needItems[i]))) {
 				return false;
 			}
 		}
-		
-		for (int i=0; i<requiredItemNames.Length; i++) {
-			if (!GameController.inventoryController.HasItem(GameController.inventoryController.GetItemIndex(requiredItemNames[i]))) {
-				return false;
-			}
-			if (deleteRequiredItems) {
-				GameController.inventoryController.SubItem(GameController.inventoryController.GetItemIndex(requiredItemNames[i]));
+
+		/* End of The Test */
+		for (int i=0; i<setSwitchNames.Length; i++) {
+			GameController.stateController.SetSwitch(setSwitchNames[i], setSwitchValues[i]);
+		}
+
+		if (deleteItems) {
+			for (int i=0; i<needItems.Length; i++) {
+				GameController.inventoryController.SubItem(GameController.inventoryController.GetItemIndex(needItems[i]));
 			}
 		}
-		
-		AudioSource.PlayClipAtPoint(sound, transform.position);
-		
+
 		return true;
 	}
-	
-	public void CallNextEvents () {
+
+	public void StartEvent () {
+		if (enterSound) {
+			AudioSource.PlayClipAtPoint(enterSound, transform.position);
+		}
+
+		gameObject.BroadcastMessage("OnEvent", SendMessageOptions.RequireReceiver);
+	}
+
+	public void EventCallBack () {
+		if (exitSound) {
+			AudioSource.PlayClipAtPoint(exitSound, transform.position);
+		}
+
+		CallNextEvents();
+	}
+
+	void CallNextEvents () {
 		for (int i=0; i<nextEvents.Length; i++) {
 			nextEvents[i].SendMessage("OnChainEnter");
 		}
-	}
-	
-	/******************************* Event Alike *******************************/
-	
-
-	public virtual void OnEvent () {
-
-		CallNextEvents();
 	}
 }

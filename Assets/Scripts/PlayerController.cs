@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(AnimatorManager), typeof(WeaponController))]
+[RequireComponent(typeof(PlayerAnimatorController), typeof(WeaponController))]
 public class PlayerController : MonoBehaviour {
 	public float walkForce = 300.0f;
 	public float fireTime = 0.2f;
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 
 	GameController gameController;
 	InputController inputController;
-	AnimatorManager animatorManager;
+	PlayerAnimatorController animatorManager;
 	InventoryController inventory;
 	WeaponController weaponController;
 
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		gameController = GameController.gameController;
 		inputController = GameController.inputController;
-		animatorManager = GetComponent<AnimatorManager>();
+		animatorManager = GetComponent<PlayerAnimatorController>();
 		inventory = GameController.inventoryController;
 		weaponController = GetComponent<WeaponController>();
 	}
@@ -107,16 +107,16 @@ public class PlayerController : MonoBehaviour {
 
 	void RefreshPlayerAnimation () {
 		if (isDead) {
-			animatorManager.PlayAnimation(inputController.orientationIndex, AnimatorManager.stateDead, 0);
+			animatorManager.PlayAnimation(inputController.orientationIndex, PlayerAnimatorController.stateDead, 0);
 			return;
 		}
 
 		switch (gameState) {
 		case GameController.stateSearch:
 			if (isMoving) {
-				animatorManager.PlayAnimation(inputController.orientationIndex, AnimatorManager.stateWalk, 0);
+				animatorManager.PlayAnimation(inputController.orientationIndex, PlayerAnimatorController.stateWalk, 0);
 			} else {
-				animatorManager.PlayAnimation(inputController.orientationIndex, AnimatorManager.stateIdle, 0);
+				animatorManager.PlayAnimation(inputController.orientationIndex, PlayerAnimatorController.stateIdle, 0);
 			}
 
 			break;
@@ -124,28 +124,28 @@ public class PlayerController : MonoBehaviour {
 			switch (fireState) {
 			case 0:
 				if (isMoving) {
-					animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], AnimatorManager.stateWalk, 0);
+					animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], PlayerAnimatorController.stateWalk, 0);
 				} else {
-					animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], AnimatorManager.stateIdle, 0);
+					animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], PlayerAnimatorController.stateIdle, 0);
 				}
 				break;
 			case 1:
-				animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], AnimatorManager.stateFire, 0);
+				animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], PlayerAnimatorController.stateFire, 0);
 
 				break;
 			case 2:
-				animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], AnimatorManager.stateFire, 1);
+				animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], PlayerAnimatorController.stateFire, 1);
 
 				break;
 			}
 
 			break;
 		case GameController.stateMenu:
-			animatorManager.PlayAnimation(inputController.orientationIndex, AnimatorManager.stateIdle, 0);
+			animatorManager.PlayAnimation(inputController.orientationIndex, PlayerAnimatorController.stateIdle, 0);
 
 			break;
 		case GameController.stateMessage:
-			animatorManager.PlayAnimation(inputController.orientationIndex, AnimatorManager.stateIdle, 0);
+			animatorManager.PlayAnimation(inputController.orientationIndex, PlayerAnimatorController.stateIdle, 0);
 
 			break;
 		}

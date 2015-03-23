@@ -2,125 +2,104 @@
 using System.Collections;
 
 public class StateController : MonoBehaviour {
-	//public string[] stateBoolNames;
-	//public bool[] stateBools;
+	// switch is set manually
+	public string[] switchNames;
+	public bool[] switches;
+	// eventSwitch is set by event automatically
+	public string[] eventSwitchNames;
 
-	public string[] stateIntNames;
-	public int[] stateInts;
+	public string[] counterNames;
+	public int[] counters;
 
-	//public string[] stateFloatNames;
-	//public float[] stateFloats;
+	public const int timerSize = 3;
+	public float[] timers = new float[timerSize];
+	public bool[] timerStates = new bool[timerSize];
 
-	//public string[] stateStringNames;
-	//public string[] stateStrings;
 
-	void Awake () {
-		if (GameController.stateController == null) {
-			GameController.stateController = this;
-		} else if (GameController.stateController != this) {
-			Destroy(gameObject);
-		}
-
-		if (PlayerPrefs.HasKey(stateIntNames[0])) {
-			SaveAll();
-		}
-	}
-
-	public void LoadAll () {
-		LoadInts();
-	}
-	public void SaveAll () {
-		SaveInts();
-	}
-	/*
-	public int GetBoolIndex (string boolName) {
-		for (int i=0; i<boolName.Length; i++) {
-			if (stateBoolNames[i] == boolName) {
+	public int GetIndex (string[] names, string name) {
+		for (int i=0; i<names.Length; i++) {
+			if (names[i] == name) {
 				return i;
 			}
 		}
 		
-		Debug.LogError(boolName + " - bool not exist");
+		Debug.LogError(name + " - name not exist");
 		return -1;
 	}
-	public bool GetBool (string boolName) {
-		return stateBools[GetBoolIndex(boolName)];
-	}
-	public void SetBool (string boolName, bool newBool) {
-		stateBools[GetBoolIndex(boolName)] = newBool;
-	}
-	public void LoadBools () {
-		if (!PlayerPrefs.HasKey(stateBoolNames[0])) {
-			return;
-		}
 
-		for (int i=0; i<stateBools.Length; i++) {
-			if (PlayerPrefs.GetString(stateBoolNames[i]) == "true") {
-				stateBools[i] = true;
-			} else {
-				stateBools[i] = false;
-			}
-		}
-	}
-	public void SaveBools () {
-		for (int i=0; i<stateBools.Length; i++) {
-			if (stateBools[i]) {
-				PlayerPrefs.SetString(stateBoolNames[i], "true");
-			} else {
-				PlayerPrefs.SetString(stateBoolNames[i], "false");
-			}
-		}
-	}
-	*/
 
-	public int GetIntIndex (string intName) {
-		for (int i=0; i<stateIntNames.Length; i++) {
-			if (stateIntNames[i] == intName) {
-				return i;
-			}
-		}
-		
-		Debug.LogError(intName + " - int not exist");
-		return -1;
+	public bool GetSwitch (string switchName) {
+		return switches[GetIndex(switchNames, switchName)];
 	}
-	public int GetInt (string intName) {
-		return stateInts[GetIntIndex(intName)];
+
+	public void SetSwitch (string switchName, bool newSwitch) {
+		switches[GetIndex(switchNames, switchName)] = newSwitch;
 	}
-	public void SetInt (string intName, int newInt) {
-		stateInts[GetIntIndex(intName)] = newInt;
-	}
-	public bool MatchInt (string intName, int matchInt) {
-		if (stateInts[GetIntIndex(intName)] == matchInt) {
-			return true;
-		}
-		return false;
-	}
-	public bool GetIntBool (string intBoolName) {
-		if (stateInts[GetIntIndex(intBoolName)] > 0) {
-			return true;
-		} else {
+
+
+	public bool GetEventSwitch (string eventSwitchName) {
+		int eventSwitchIndex = GetIndex(eventSwitchNames, eventSwitchName);
+		if (eventSwitchIndex < 0) {
 			return false;
-		}
-	}
-	public void SetIntBool (string intBoolName, bool newIntBool) {
-		if (newIntBool) {
-			stateInts[GetIntIndex(intBoolName)] = 1;
 		} else {
-			stateInts[GetIntIndex(intBoolName)] = 0;
+			return true;
 		}
 	}
-	public void LoadInts () {
-		if (!PlayerPrefs.HasKey(stateIntNames[0])) {
+
+	public void SetEventSwitch (string eventSwitchName) {
+		if (GetEventSwitch(eventSwitchName)) {
 			return;
 		}
-		
-		for (int i=0; i<stateInts.Length; i++) {
-			stateInts[i] = PlayerPrefs.GetInt(stateIntNames[i]);
+
+		string[] eventSwitchNamesX = eventSwitchNames;
+		eventSwitchNames = new string[eventSwitchNamesX.Length + 1];
+		System.Array.Copy(eventSwitchNamesX, eventSwitchNames, Mathf.Min(eventSwitchNamesX.Length, eventSwitchNames.Length));
+
+		eventSwitchNames[eventSwitchNames.Length - 1] = eventSwitchName;
+	}
+
+
+	public int GetCounter (string counterName) {
+		return counters[GetIndex(counterNames, counterName)];
+	}
+
+	public void SetCounter (string counterName, int value) {
+		int counterIndex = GetIndex(counterNames, counterName);
+
+		if (counterIndex < 0) {
+			string[] counterNamesX = counterNames;
+			counterNames = new string[counterNamesX.Length + 1];
+			System.Array.Copy(counterNamesX, counterNames, Mathf.Min(counterNamesX.Length, counterNames.Length));
+
+			int[] countersX = counters;
+			counters = new int[countersX.Length + 1];
+			System.Array.Copy(countersX, counters, Mathf.Min(countersX.Length, counters.Length));
+
+			counterNames[counterNames.Length - 1] = counterName;
+			counters[counters.Length - 1] = value;
+		} else {
+			counters[counterIndex] = value;
 		}
 	}
-	public void SaveInts () {
-		for (int i=0; i<stateInts.Length; i++) {
-			PlayerPrefs.SetInt(stateIntNames[i], stateInts[i]);
+
+	public void IncrementCounter (string counterName, int value) {
+		counters[GetIndex(counterNames, counterName)] += value;
+	}
+
+
+	public float GetTimer (int timer) {
+		return timers[timer];
+	}
+
+	public void SetTimer (int timer, bool newState) {
+		timerStates[timer] = newState;
+	}
+
+	void Update () {
+		for (int i=0; i<timers.Length; i++) {
+			if (timerStates[i]) {
+				timers[i] += Time.deltaTime;
+			}
 		}
 	}
 }

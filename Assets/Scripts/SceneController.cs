@@ -3,25 +3,19 @@ using System.Collections;
 
 public class SceneController : MonoBehaviour {
 	public int sceneIndex;
+	public string sceneName;
 
-	public Transform background;
-	public Transform foreground;
 	public Transform eventLayer;
-
-	private GameController gameController;
-
-	private Transform[] eventTransforms = new Transform[0];
-	private float maxY;
-	private float minY;
-	private float intervalY;
+	
+	Transform[] eventTransforms = new Transform[0];
+	float maxY;
+	float minY;
+	float intervalY;
 
 	void Start () {
-		gameController = GameController.gameController;
+		GameController.gameController.AddScene(gameObject, sceneIndex);
 
-		gameController.AddScene(gameObject, sceneIndex);
-
-		background = transform.FindChild("background");
-		foreground = transform.FindChild("foreground");
+		sceneName = gameObject.name;
 		eventLayer = transform.FindChild("event");
 
 		for (int i=0; i<eventLayer.childCount; i++) {

@@ -5,12 +5,14 @@ using System.Collections;
 public class GameController : MonoBehaviour {
 	public static GameController gameController = null;
 	public static InputController inputController = null;
-	public static MessageController messageController = null;
-	public static InventoryController inventoryController = null;
-	public static CharacterManager characterManager = null;
 	public static CameraController cameraController = null;
-	public static FrameController frameController = null;
 	public static StateController stateController = null;
+
+	public static MessageController messageController = null;
+	public static FrameController frameController = null;
+
+	public static HeroController heroController = null;
+	public static InventoryController inventoryController = null;
 
 	public const float gameScale = 2.0f;
 	public static Vector2 playerPhase = Vector2.up * gameScale;
@@ -57,8 +59,6 @@ public class GameController : MonoBehaviour {
 		sceneIndex = -1;
 
 		canvas.enabled = true;
-
-		stateController.LoadAll();
 	}
 
 	void Update () {
@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour {
 			messageController.HideMessage();
 			frameController.HideFrame();
 			OpenScene(testStartLevel, Vector2.zero);
-			characterManager.AddHero(1, scenes[testStartLevel].transform.position + Vector3.one * gameScale);
+			heroController.NewHero(1, scenes[testStartLevel].transform.position + Vector3.one * gameScale);
 		}
 	}
 
@@ -97,13 +97,10 @@ public class GameController : MonoBehaviour {
 	public void CloseScenes () {
 		cameraController.LockCameraPosition(cameraController.transform.position);
 
-//		characterManager.DestroyCharacters();
-
 		for (int i=0; i<scenes.Length; i++) {
 			scenes[i].SetActive(false);
 		}
 	}
-
 	public void CloseScene (int sceneIndex) {
 		cameraController.LockCameraPosition(cameraController.transform.position);
 
@@ -116,8 +113,8 @@ public class GameController : MonoBehaviour {
 
 		sceneIndex = newSceneIndex;
 		cameraController.LockCameraPosition(startPosition);
-		if (characterManager.heroInstance != null) {
-			cameraController.SetCameraFocus(characterManager.heroInstance.transform);
+		if (heroController.heroInstance != null) {
+			cameraController.SetCameraFocus(heroController.heroInstance.transform);
 		}
 	}
 }
