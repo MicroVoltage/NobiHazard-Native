@@ -11,7 +11,7 @@ public class MessageController : MonoBehaviour {
 
 	public bool showingMessage;
 
-	private GameController gameController;
+	GameController gameController;
 
 
 	void Awake () {

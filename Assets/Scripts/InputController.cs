@@ -72,6 +72,7 @@ public class InputController : MonoBehaviour {
 			shift = Sdown;
 			break;
 		case GameController.stateMenu:
+			cancel = Bdown;
 
 			break;
 		case GameController.stateMessage:

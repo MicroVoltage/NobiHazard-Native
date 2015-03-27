@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
 	public static MessageController messageController = null;
 	public static FrameController frameController = null;
 	public static MaskController maskController = null;
+	public static MenuController menuController = null;
 
 	public static HeroController heroController = null;
 	public static InventoryController inventoryController = null;
@@ -63,6 +64,9 @@ public class GameController : MonoBehaviour {
 		if (sceneIndex == -1) {
 			messageController.HideMessage();
 			frameController.HideFrame();
+			maskController.HideMask(0);
+			menuController.HideMenu();
+
 			OpenScene(testStartLevel);
 			heroController.NewHero(1, scenes[testStartLevel].transform.position + Vector3.one * gameScale);
 		}

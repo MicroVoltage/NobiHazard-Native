@@ -1,12 +1,25 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 [System.Serializable]
 public class Item {
 	public string name;
-	public string Description;
+
+	public Sprite icon;
+	public Sprite preview;
+
+	public string description;
+	public string applyText;
+
 	public int Int;
 	public float Float;
+
+	/* Standard event prefeb
+	 * Will be instantiated and called OnChainEnter
+	 * Must detele itself after execution
+	 */
+	public GameObject itemEvent;
 }
 
 public class InventoryController : MonoBehaviour {

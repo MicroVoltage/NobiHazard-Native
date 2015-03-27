@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
 	PlayerAnimatorController animatorManager;
 	InventoryController inventory;
 	WeaponController weaponController;
+	MenuController menuController;
 
 	int gameState;
 
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour {
 		animatorManager = GetComponent<PlayerAnimatorController>();
 		inventory = GameController.inventoryController;
 		weaponController = GetComponent<WeaponController>();
+		menuController = GameController.menuController;
 	}
 
 	void FixedUpdate () {
@@ -55,6 +57,11 @@ public class PlayerController : MonoBehaviour {
 		isMoving = false;
 		switch (gameState) {
 		case GameController.stateSearch:
+			if (inputController.menu) {
+				gameController.gameState = GameController.stateMenu;
+				menuController.ShowMenu();
+			}
+
 			if (weaponDrawn) {
 				gameController.gameState = GameController.stateFight;
 				break;
@@ -62,8 +69,14 @@ public class PlayerController : MonoBehaviour {
 
 			isMoving = inputController.direction.sqrMagnitude > 0;
 			rigidbody2D.AddForce(inputController.direction.normalized * walkForce);
+
 			break;
 		case GameController.stateFight:
+			if (inputController.menu) {
+				gameController.gameState = GameController.stateMenu;
+				menuController.ShowMenu();
+			}
+
 			if (!weaponDrawn) {
 				gameController.gameState = GameController.stateSearch;
 				break;
@@ -77,8 +90,13 @@ public class PlayerController : MonoBehaviour {
 					fireState = 1;
 				}
 			}
+
 			break;
 		case GameController.stateMenu:
+			if (inputController.cancel) {
+				gameController.gameState = GameController.stateSearch;
+				menuController.HideMenu();
+			}
 
 			break;
 		case GameController.stateMessage:

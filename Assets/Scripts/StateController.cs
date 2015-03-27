@@ -16,6 +16,14 @@ public class StateController : MonoBehaviour {
 	public bool[] timerStates = new bool[timerSize];
 
 
+	void Awake () {
+		if (GameController.stateController == null) {
+			GameController.stateController = this;
+		} else if (GameController.stateController != this) {
+			Destroy(gameObject);
+		}
+	}
+
 	public int GetIndex (string[] names, string name) {
 		for (int i=0; i<names.Length; i++) {
 			if (names[i] == name) {
