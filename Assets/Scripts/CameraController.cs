@@ -2,14 +2,15 @@
 using System.Collections;
 
 public class CameraController : MonoBehaviour {
-	public Transform focus;
-	public bool isLocked;
-	public Vector2 lockedPosition;
-	public Vector2 safeRect;
+	public Transform targetTransform;
+	public Vector2 targetPosition;
+
+	public Rect sceneRect;
+	public Rect viewRect;
 
 	public AudioClip[] musics;
 
-	private Vector3 wantedPosition;
+	public Vector3 newPosition;
 
 	void Awake () {
 		if (GameController.cameraController == null) {
@@ -19,39 +20,73 @@ public class CameraController : MonoBehaviour {
 		}
 	}
 
+	void Start () {
+		viewRect.height = Camera.main.orthographicSize * 2;
+		viewRect.width = viewRect.height * Camera.main.aspect;
+		viewRect.center = targetPosition;
+
+		newPosition.z = transform.position.z;
+	}
+
+	public void LockCamera () {
+		targetTransform = null;
+	}
+	public void LockCamera (Vector2 newPosition) {
+		targetTransform = null;
+		targetPosition = newPosition;
+	}
+
+	public void UnlockCamera (Transform newTransform) {
+		targetTransform = newTransform;
+		targetPosition = newTransform.position;
+	}
+
 	void FixedUpdate () {
-		if (isLocked) {
-			SetCameraPosition(lockedPosition);
-			return;
+		viewRect.width = viewRect.height * Camera.main.aspect;
+		if (targetTransform) {
+			targetPosition = targetTransform.position;
+		}
+		viewRect.center = targetPosition;
+
+		// x test
+		if (viewRect.xMin < sceneRect.xMin) {
+			if (viewRect.xMax > sceneRect.xMax) {
+				newPosition.x = sceneRect.center.x;
+			} else {
+				newPosition.x = sceneRect.xMin + viewRect.width/2;
+			}
+		} else {
+			if (viewRect.xMax > sceneRect.xMax) {
+				newPosition.x = sceneRect.xMax - viewRect.width/2;
+			} else {
+				newPosition.x = targetPosition.x;
+			}
+		}
+		// x special case test
+		if (viewRect.width >= sceneRect.width) {
+			newPosition.x = sceneRect.center.x;
 		}
 
-		wantedPosition = transform.position;
-		if (focus.position.x > transform.position.x + safeRect.x) {
-			wantedPosition.x += focus.position.x - transform.position.x - safeRect.x;
-		} else if (focus.position.x < transform.position.x - safeRect.x) {
-			wantedPosition.x += focus.position.x - transform.position.x + safeRect.x;
+		// y test
+		if (viewRect.yMin < sceneRect.yMin) {
+			if (viewRect.yMax > sceneRect.yMax) {
+				newPosition.y = sceneRect.center.y;
+			} else {
+				newPosition.y = sceneRect.yMin + viewRect.height/2;
+			}
+		} else {
+			if (viewRect.yMax > sceneRect.yMax) {
+				newPosition.y = sceneRect.yMax - viewRect.height/2;
+			} else {
+				newPosition.y = targetPosition.y;
+			}
 		}
-		if (focus.position.y > transform.position.y + safeRect.y) {
-			wantedPosition.y += focus.position.y - transform.position.y - safeRect.y;
-		} else if (focus.position.y < transform.position.y - safeRect.y) {
-			wantedPosition.y += focus.position.y - transform.position.y + safeRect.y;
+		// x special case test
+		if (viewRect.height >= sceneRect.height) {
+			newPosition.y = sceneRect.center.y;
 		}
-		transform.position = wantedPosition;
-	}
 
-	public void SetCameraFocus (Transform newFocus) {
-		isLocked = false;
-		focus = newFocus;
-	}
-
-	public void SetCameraPosition (Vector2 newPosition) {
-		transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
-	}
-
-	public void LockCameraPosition (Vector2 newPosition) {
-		isLocked = true;
-		lockedPosition = newPosition;
-		SetCameraPosition(newPosition);
+		transform.position = newPosition;
 	}
 
 	public void SetMusic (string musicName) {
@@ -61,7 +96,16 @@ public class CameraController : MonoBehaviour {
 				return;
 			}
 		}
+
 		Debug.LogError(musicName + " - music not exist");
 		return;
+	}
+
+	public void OnDrawGizmosSelected () {
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireCube((Vector3)sceneRect.center, (Vector3)sceneRect.size);
+
+		Gizmos.color = Color.magenta;
+		Gizmos.DrawWireCube((Vector3)viewRect.center, (Vector3)viewRect.size);
 	}
 }

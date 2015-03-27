@@ -1,15 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(GenericEvent))]
 public class MaskEvent : MonoBehaviour {
+	public string colorName;
+	public float colorDeltaTime;
+	
+	MaskController maskController;
 
-	// Use this for initialization
 	void Start () {
-	
+		maskController = GameController.maskController;
+		
+		gameObject.name = gameObject.name + "-mask";
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public void OnEvent () {
+		maskController.ShowMask(colorName, colorDeltaTime);
+
+		gameObject.SendMessage("EventCallBack", SendMessageOptions.RequireReceiver);
 	}
 }

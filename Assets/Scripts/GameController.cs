@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
 
 	public static MessageController messageController = null;
 	public static FrameController frameController = null;
+	public static MaskController maskController = null;
 
 	public static HeroController heroController = null;
 	public static InventoryController inventoryController = null;
@@ -18,11 +19,8 @@ public class GameController : MonoBehaviour {
 	public static Vector2 playerPhase = Vector2.up * gameScale;
 
 	public Canvas canvas;
-
-	public Transform cameraFocus;
-
+	
 	public GameObject[] scenes;
-	public SceneController[] sceneControllers;
 	public int sceneIndex = -1;
 
 	/** gameState
@@ -65,7 +63,7 @@ public class GameController : MonoBehaviour {
 		if (sceneIndex == -1) {
 			messageController.HideMessage();
 			frameController.HideFrame();
-			OpenScene(testStartLevel, Vector2.zero);
+			OpenScene(testStartLevel);
 			heroController.NewHero(1, scenes[testStartLevel].transform.position + Vector3.one * gameScale);
 		}
 	}
@@ -84,37 +82,25 @@ public class GameController : MonoBehaviour {
 		}
 		scenes[sceneIndex] = scene;
 
-		if (sceneControllers.Length < sceneIndex + 1) {
-			SceneController[] sceneControllersX = sceneControllers;
-			sceneControllers = new SceneController[sceneIndex + 1];
-			System.Array.Copy(sceneControllersX, sceneControllers, sceneControllersX.Length);
-		}
-		sceneControllers[sceneIndex] = scene.GetComponent<SceneController>();
-
 		CloseScene(sceneIndex);
 	}
 
 	public void CloseScenes () {
-		cameraController.LockCameraPosition(cameraController.transform.position);
-
 		for (int i=0; i<scenes.Length; i++) {
 			scenes[i].SetActive(false);
 		}
 	}
 	public void CloseScene (int sceneIndex) {
-		cameraController.LockCameraPosition(cameraController.transform.position);
-
 		scenes[sceneIndex].SetActive(false);
 	}
 
-	public void OpenScene (int newSceneIndex, Vector2 startPosition) {
+	public void OpenScene (int newSceneIndex) {
 		scenes[newSceneIndex].SetActive(true);
-		sceneControllers[newSceneIndex].eventLayer.BroadcastMessage("OnSceneEnter", sceneIndex);
+		SceneController sceneController = scenes[newSceneIndex].GetComponent<SceneController>();
+		sceneController.eventLayer.BroadcastMessage("OnSceneEnter", sceneIndex);
 
 		sceneIndex = newSceneIndex;
-		cameraController.LockCameraPosition(startPosition);
-		if (heroController.heroInstance != null) {
-			cameraController.SetCameraFocus(heroController.heroInstance.transform);
-		}
+
+		cameraController.sceneRect = sceneController.sceneRect;
 	}
 }

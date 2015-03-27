@@ -124,17 +124,17 @@ public class PlayerController : MonoBehaviour {
 			switch (fireState) {
 			case 0:
 				if (isMoving) {
-					animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], PlayerAnimatorController.stateWalk, 0);
+					animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weapons[weaponIndex].animationIndex, PlayerAnimatorController.stateWalk, 0);
 				} else {
-					animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], PlayerAnimatorController.stateIdle, 0);
+					animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weapons[weaponIndex].animationIndex, PlayerAnimatorController.stateIdle, 0);
 				}
 				break;
 			case 1:
-				animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], PlayerAnimatorController.stateFire, 0);
+				animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weapons[weaponIndex].animationIndex, PlayerAnimatorController.stateFire, 0);
 
 				break;
 			case 2:
-				animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weaponAnimationIndexes[weaponIndex], PlayerAnimatorController.stateFire, 1);
+				animatorManager.PlayAnimation(inputController.orientationIndex, weaponController.weapons[weaponIndex].animationIndex, PlayerAnimatorController.stateFire, 1);
 
 				break;
 			}

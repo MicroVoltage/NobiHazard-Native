@@ -102,4 +102,17 @@ public partial class GenericEvent : MonoBehaviour {
 			nextEvents[i].SendMessage("OnChainEnter");
 		}
 	}
+
+	/* Editor Function */
+	public void NewNextEvent (GameObject nextEvent) {
+		nextEvents = new GameObject[1];
+		nextEvents[0] = nextEvent;
+	}
+	public void AddNextEvent (GameObject nextEvent) {
+		GameObject[] nextEventsX = nextEvents;
+		nextEvents = new GameObject[nextEventsX.Length + 1];
+		System.Array.Copy (nextEventsX, nextEvents, Mathf.Min (nextEventsX.Length, nextEvents.Length));
+		
+		nextEvents[nextEvents.Length-1] = nextEvent;
+	}
 }

@@ -1,38 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
+public class Item {
+	public string name;
+	public string Description;
+	public int Int;
+	public float Float;
+}
+
 public class InventoryController : MonoBehaviour {
 	public float maxHealth = 100.0f;
 	public float health = 100.0f;
 
 	public int inventorySize = 200;
 
+	public Item[] items;
 	public int[] itemCounts;
-	public string[] itemNames;
-	public string[] itemDescriptions;
-	public int[] itemInts;
-	public float[] itemFloats;
-	
 
-	public void ResizeInventory () {
-		int[] itemCountsX = itemCounts;
-		string[] itemNamesX = itemNames;
-		string[] itemDescriptionsX = itemDescriptions;
-		int[] itemIntsX = itemInts;
-		float[] itemFloatsX = itemFloats;
-
-		itemCounts = new int[inventorySize];
-		itemNames = new string[inventorySize];
-		itemDescriptions = new string[inventorySize];
-		itemInts = new int[inventorySize];
-		itemFloats = new float[inventorySize];
-
-		System.Array.Copy(itemCountsX, itemCounts, Mathf.Min(itemCountsX.Length, itemCounts.Length));
-		System.Array.Copy(itemNamesX, itemNames, Mathf.Min(itemNamesX.Length, itemNames.Length));
-		System.Array.Copy(itemDescriptionsX, itemDescriptions, Mathf.Min(itemDescriptionsX.Length, itemDescriptions.Length));
-		System.Array.Copy(itemIntsX, itemInts, Mathf.Min(itemIntsX.Length, itemInts.Length));
-		System.Array.Copy(itemFloatsX, itemFloats, Mathf.Min(itemFloatsX.Length, itemFloats.Length));
-	}
 
 	void Awake () {
 		if (GameController.inventoryController == null) {
@@ -43,8 +28,8 @@ public class InventoryController : MonoBehaviour {
 	}
 
 	public int GetItemIndex (string itemName) {
-		for (int i=0; i<itemNames.Length; i++) {
-			if (itemNames[i] == itemName) {
+		for (int i=0; i<items.Length; i++) {
+			if (items[i].name == itemName) {
 				return i;
 			}
 		}
@@ -54,11 +39,11 @@ public class InventoryController : MonoBehaviour {
 	}
 
 	public int GetItemInt (int itemIndex) {
-		return itemInts[itemIndex];
+		return items[itemIndex].Int;
 	}
 
 	public float GetItemFloat (int itemIndex) {
-		return itemFloats[itemIndex];
+		return items[itemIndex].Float;
 	}
 
 	public void AddItem (int itemIndex) {
@@ -106,13 +91,4 @@ public class InventoryController : MonoBehaviour {
 	public float HealthValue () {
 		return health;
 	}
-}
-
-
-public class Item {
-	public int itemCount;
-	public string itemName;
-	public string itemDescription;
-	public int itemInt;
-	public float itemFloat;
 }

@@ -5,6 +5,8 @@ public class SceneController : MonoBehaviour {
 	public int sceneIndex;
 	public string sceneName;
 
+	public Rect sceneRect;
+
 	public Transform eventLayer;
 	
 	Transform[] eventTransforms = new Transform[0];
@@ -51,5 +53,10 @@ public class SceneController : MonoBehaviour {
 				eventTransforms[i].position.y,
 				-(maxY - eventTransforms[i].position.y) / intervalY);
 		}
+	}
+
+	public void OnDrawGizmosSelected () {
+		Gizmos.color = Color.red;
+		Gizmos.DrawWireCube((Vector3)sceneRect.center, (Vector3)sceneRect.size);
 	}
 }

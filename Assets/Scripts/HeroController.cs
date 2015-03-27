@@ -32,13 +32,12 @@ public class HeroController : MonoBehaviour {
 			heroIndex = newHeroIndex;
 		}
 
-		SceneController curSceneController = gameController.sceneControllers[gameController.sceneIndex];
+		SceneController curSceneController = gameController.scenes[gameController.sceneIndex].GetComponent<SceneController>();
 		heroInstance = (GameObject)Instantiate(characters[newHeroIndex], position, transform.rotation);
 		heroInstance.transform.parent = curSceneController.eventLayer;
 
-		if (cameraController.focus != heroInstance.transform) {
-			cameraController.SetCameraFocus(heroInstance.transform);
-			cameraController.SetCameraPosition(heroInstance.transform.position);
+		if (cameraController.targetTransform != heroInstance.transform) {
+			cameraController.UnlockCamera(heroInstance.transform);
 		}
 
 		heroInstance.GetComponent<PlayerController>().enabled = true;
@@ -46,6 +45,7 @@ public class HeroController : MonoBehaviour {
 	}
 
 	public void DestroyHero () {
+		cameraController.LockCamera();
 		Destroy(heroInstance);
 		heroInstance = null;
 		heroIndex = -1;

@@ -5,12 +5,12 @@ using System.Collections;
 public class StateEvent : MonoBehaviour {
 
 
-	StateController stateController;
+//	StateController stateController;
 
 	void Start () {
 		gameObject.name = gameObject.name + "-state";
 
-		stateController = GameController.stateController;
+//		stateController = GameController.stateController;
 	}
 
 	public void OnEvent() {

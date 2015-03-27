@@ -16,7 +16,7 @@ public class TeleportEvent : MonoBehaviour {
 	public void OnEvent () {
 		Debug.Log(gameObject.name + " - get teleport event");
 
-		SceneController targetSceneController = GameController.gameController.sceneControllers[targetSceneIndex];
+		SceneController targetSceneController = GameController.gameController.scenes[targetSceneIndex].GetComponent<SceneController>();
 		GameObject heroInstance = GameController.heroController.heroInstance;
 
 		heroInstance.transform.parent = targetSceneController.eventLayer;
@@ -24,7 +24,7 @@ public class TeleportEvent : MonoBehaviour {
 
 		GameController.inputController.SetOrientationIndex((int)newOrientation);
 		GameController.gameController.CloseScenes();
-		GameController.gameController.OpenScene(targetSceneIndex, targetPosition);
+		GameController.gameController.OpenScene(targetSceneIndex);
 	}
 
 	public void OnDrawGizmosSelected () {
