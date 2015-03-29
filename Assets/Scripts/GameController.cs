@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour {
 	public const float gameScale = 2.0f;
 	public static Vector2 playerPhase = Vector2.up * gameScale;
 
+	public Sprite titleImage;
+
 	public Canvas canvas;
 	
 	public GameObject[] scenes;

@@ -79,7 +79,7 @@ public class HeroAnimationEvent : MonoBehaviour {
 		}
 	}
 	
-	public void OnDrawGizmosSelected () {
+	void OnDrawGizmosSelected () {
 		Gizmos.color = Color.gray;
 		for (int x=-8; x<8; x++) {
 			Gizmos.DrawRay(

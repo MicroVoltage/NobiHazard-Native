@@ -46,7 +46,7 @@ public class MenuController : MonoBehaviour {
 	
 	public void RefreshItemList () {
 		for (int i=0; i<itemContainer.childCount; i++) {
-//			Destroy(itemContainer.GetChild(i).gameObject);
+			Destroy(itemContainer.GetChild(i).gameObject);
 		}
 
 		for (int i=0; i<inventoryController.items.Length; i++) {

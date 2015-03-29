@@ -3,6 +3,8 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour {
 	public Transform targetTransform;
+	// Set when cameraEvent do not terminate and MUST clean when terminated
+	public Transform originalTargetTransform;
 	public Vector2 targetPosition;
 
 	public Rect sceneRect;

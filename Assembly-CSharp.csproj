@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AnimationEditor.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\CameraEvent.cs" />
      <Compile Include="Assets\Scripts\ClusterEventEditor.cs" />
      <Compile Include="Assets\Scripts\DeleteEvent.cs" />
      <Compile Include="Assets\Scripts\EventActivator.cs" />

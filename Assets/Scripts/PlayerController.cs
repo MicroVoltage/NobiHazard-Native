@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 		menuController = GameController.menuController;
 	}
 
-	void FixedUpdate () {
+	void Update () {
 		if (isDead) {
 			return;
 		}
@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour {
 			}
 
 			isMoving = inputController.direction.sqrMagnitude > 0;
-			rigidbody2D.AddForce(inputController.direction.normalized * walkForce);
+			rigidbody2D.AddForce(inputController.direction.normalized * walkForce * Time.deltaTime * 100f);
 
 			break;
 		case GameController.stateFight:

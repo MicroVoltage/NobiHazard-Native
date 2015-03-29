@@ -5,12 +5,12 @@ using System.Collections;
 public class MaskController : MonoBehaviour {
 	public string[] colorNames;
 	public Color[] colors;
-	public Color transparent;
 
 	public Image mask;
 
-	Color targetColor;
-	float targetTime;
+	public Color targetColor;
+	public Color startColor;
+	float targetTime = 99999f;
 	float targetDeltaTime;
 
 
@@ -27,19 +27,22 @@ public class MaskController : MonoBehaviour {
 			mask.color = targetColor;
 			return;
 		}
-
-		mask.color = Color.Lerp(mask.color, targetColor, (targetTime-Time.time)/targetDeltaTime);
+		mask.color = Color.Lerp(startColor, targetColor, 1-(targetTime-Time.time)/targetDeltaTime);
 	}
 
 	public void ShowMask (string colorName, float deltaTime) {
 		targetColor = colors[GetColorIndex(colorName)];
+		startColor = mask.color;
 
 		targetTime = Time.time + deltaTime;
 		targetDeltaTime = deltaTime;
 	}
 	
 	public void HideMask (float deltaTime) {
-		targetColor = transparent;
+		targetColor = mask.color;
+		targetColor.a = 0f;
+		startColor = mask.color;
+
 
 		targetTime = Time.time + deltaTime;
 		targetDeltaTime = deltaTime;
