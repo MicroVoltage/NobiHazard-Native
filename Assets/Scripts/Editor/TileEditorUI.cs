@@ -106,7 +106,7 @@ public class TileEditorUI : Editor {
 			AddAttributes(tile);
 
 			Undo.RegisterCreatedObjectUndo(tile, "Create Tile");
-		} else if (tileEditor.transform.Find(tileName)) {
+		} else if (tileEditor.transform.Find(tileName).GetComponent<SpriteRenderer>().sprite != tileEditor.tiles[tileEditor.tileTextureIDtoTileNo[tileEditor.tileTextureID]] || tileEditor.transform.Find(tileName).transform.position != tileEditor.realMousePositionOnMap) {
 			Delete(x, y);
 			Draw(x, y);
 		}
